@@ -11,14 +11,27 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*ptr;
+	size_t	len;
+	int		start;
+	int		end;
+	char	*newstr;
 
-	ptr = (char *)malloc(count * size);
-	if (!ptr)
+	start = 0;
+	end = ft_strlen(s1) - 1;
+	if (!s1 || !set)
 		return (NULL);
-	ft_bzero(ptr, count * size);
-	return (ptr);
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	while (end > start && ft_strchr(set, s1[end]))
+		end--;
+	len = end - start + 1;
+	newstr = (char *)malloc(sizeof(char) * (len + 1));
+	if (!newstr)
+		return (NULL);
+	ft_strlcpy(newstr, s1 + start, len + 1);
+	return (newstr);
 }
