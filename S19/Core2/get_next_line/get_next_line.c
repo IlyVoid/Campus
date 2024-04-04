@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 16:31:05 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/03 18:25:22 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/04 11:31:10 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*fetch_line(char *left_str)
 
 	i = 0;
 	if (!left_str[i])
-		return(NULL);
+		return (NULL);
 	while (left_str[i] && left_str[i] != '\n')
 		i++;
 	str = malloc(sizeof(char) * (i + 2));
@@ -75,7 +75,7 @@ char	*ft_read_left(int fd, char *str)
 	if (!buff)
 		return (NULL);
 	read_bytes = 1;
-	while (ft_strrchr(str, '\n') && read_bytes != 0)
+	while (ft_strchr(str, '\n') && read_bytes != 0)
 	{
 		read_bytes = read(fd, buff, BUFFER_SIZE);
 		if (read_bytes == -1)
