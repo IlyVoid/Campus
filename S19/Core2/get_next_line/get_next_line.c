@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 16:31:05 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/04 11:31:10 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/04 22:04:37 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ char	*ft_new_line_left(char *left_str)
 	while (left_str[i])
 		str[j++] = left_str[i++];
 	str[j] = '\0';
+	free(left_str);
 	return (str);
 }
 
@@ -51,7 +52,7 @@ char	*fetch_line(char *left_str)
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (left_str[i] && left_str != '\n')
+	while (left_str[i] && left_str[i] != '\n')
 	{
 		str[i] = left_str[i];
 		i++;
@@ -75,7 +76,7 @@ char	*ft_read_left(int fd, char *str)
 	if (!buff)
 		return (NULL);
 	read_bytes = 1;
-	while (ft_strchr(str, '\n') && read_bytes != 0)
+	while (!ft_strchr(str, '\n') && read_bytes != 0)
 	{
 		read_bytes = read(fd, buff, BUFFER_SIZE);
 		if (read_bytes == -1)
@@ -84,7 +85,7 @@ char	*ft_read_left(int fd, char *str)
 			free(str);
 			return (NULL);
 		}
-		buff(read_bytes) = '\0';
+		buff[read_bytes] = '\0';
 		str = ft_strjoin(str, buff);
 	}
 	free(buff);
@@ -102,6 +103,6 @@ char	*ft_next_line(int fd)
 	if (!left_str)
 		return (NULL);
 	line = fetch_line(left_str);
-	left_str = ft_new_line_left(left_str);
+	left_str = ft_new_left_str(left_str);
 	return (line);
 }
