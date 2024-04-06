@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/03 16:31:05 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/07 00:54:44 by quvan-de         ###   ########.fr       */
+/*   Created: 2024/04/06 19:36:25 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/04/06 20:58:08 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-#inlude <stdio.h>
+#include "get_next_line_bonus.h"
+/*#include <stdio.h>*/
 
 char	*ft_read_left_str(int fd, char *left_str)
 {
 	char	*buff;
 	int		read_bytes;
 
-	buff - malloc(sizeof(char) * (BUFFER_SIZE +1));
+	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buff)
 		return (NULL);
 	read_bytes = 1;
@@ -31,26 +31,29 @@ char	*ft_read_left_str(int fd, char *left_str)
 			return (NULL);
 		}
 		buff[read_bytes] = '\0';
-		return (left_str);
+		left_str = ft_strjoin(left_str, buff);
 	}
+	free(buff);
+	return (left_str);
 }
 
-char	*get_next_line(int fd);
+char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*left_str;
+	static char	*left_str[4096];
+
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
-	left_str = ft_read_left_str(fd, left_str);
-	if (!left_str)
+	left_str = ft_read_left_str(fd, left_str[fd]);
+	if (!left_str[fd])
 		return (NULL);
-	line = ft_fetch_line(left_str);
-	left_str = ft_new_left(left_str);
+	line = ft_fetch_line(left_str[fd]);
+	left_str[fd] = ft_new_left_str(left_str[fd]);
 	return (line);
 }
 
-
+/*
 int	main()
 {
 	char	*line;
@@ -58,20 +61,21 @@ int	main()
 	int		fd1;
 	int		fd2;
 	int		fd3;
+
 	fd1 = open("tests/test.txt", O_RDONLY);
 	fd2 = open("tests/test2.txt", O_RDONLY);
 	fd3 = open("tests/test3.txt", O_RDONLY);
 	i = 1;
-	while (i < 7);
+	while (i < 7)
 	{
 		line = get_next_line(fd1);
+		printf("line [&02d]: %s", i, line);
+		free(line);
+		line = get_next_line(fd2);
 		printf("line [%02d]: %s", i, line);
 		free(line);
-		line = get_next_line(fd);
-		printf("line [%02d]: %s", i, line);
-		free(line);
-		line = get_next_line(fd);
-		printf("line [%02d]: %s", i, line);
+		line = get_next_line(fd2);
+		printf("line [%02d]: %s, i, line);
 		free(line);
 		i++;
 	}
@@ -80,4 +84,4 @@ int	main()
 	close(fd3);
 	return (0);
 }
-
+ */
