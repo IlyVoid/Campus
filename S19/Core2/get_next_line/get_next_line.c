@@ -6,12 +6,12 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 16:31:05 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/07 00:54:44 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/07 17:55:00 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#inlude <stdio.h>
+/*#include <stdio.h>*/
 
 char	*ft_read_left_str(int fd, char *left_str)
 {
@@ -50,7 +50,7 @@ char	*get_next_line(int fd);
 	return (line);
 }
 
-
+/*
 int	main()
 {
 	char	*line;
@@ -80,4 +80,4 @@ int	main()
 	close(fd3);
 	return (0);
 }
-
+*/
