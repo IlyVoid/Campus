@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 20:57:06 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/07 00:39:19 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/08 09:29:33 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ char	*ft_fetch_line(char *left_str)
 	str[i] = '\0';
 	return (str);
 }
+
 char	*ft_new_left_str(char *left_str)
 {
 	int		i;
@@ -122,4 +123,3 @@ char	*ft_new_left_str(char *left_str)
 	free(left_str);
 	return (str);
 }
-

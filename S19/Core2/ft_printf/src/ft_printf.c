@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:56:52 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/03 16:27:11 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:23:52 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	ft_formatter(va_list va, char *str, size_t *counter)
 {
-	if (*str == 'c')
+	if (*str == '0')
+		return (NULL);
+	else if (*str == 'c')
 		ft_putchar_printf(va_arg(va, int), counter);
 	else if (*str == 's')
 		ft_putstr_printf(va_arg(va, char *), counter);

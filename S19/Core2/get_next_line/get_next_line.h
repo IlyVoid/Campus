@@ -6,16 +6,16 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 17:47:48 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/06 19:24:34 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/08 09:37:09 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
-# ifdef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1000
-#endif
+# endif
 
 # include <fcntl.h>
 # include <stdlib.h>

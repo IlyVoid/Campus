@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 19:36:25 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/06 20:58:08 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/08 09:28:17 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ char	*get_next_line(int fd)
 {
 	char		*line;
 	static char	*left_str[4096];
-
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
