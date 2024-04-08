@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:06:04 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/03 10:06:06 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/08 12:06:56 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ static char	*ft_word(char *str, char c)
 	i = 0;
 	len_word = ft_word_len(str, c);
 	word = (char *)malloc(sizeof(char) * (len_word + 1));
+	if (!word)
+		return (NULL);
 	while (i < len_word)
 	{
 		word[i] = str[i];
