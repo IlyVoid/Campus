@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:13:08 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/03 10:13:11 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/08 17:14:40 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*newstr;
 
 	start = 0;
-	end = ft_strlen(s1) - 1;
 	if (!s1 || !set)
 		return (NULL);
+	end = ft_strlen(s1) - 1;
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
 	while (end > start && ft_strchr(set, s1[end]))
@@ -35,3 +35,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(newstr, s1 + start, len + 1);
 	return (newstr);
 }
+/*
+#include <stdio.h>
+int	main()
+{
+	printf("%s", ft_strtrim(NULL, NULL));
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 17:34:55 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/03 11:02:10 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:25:36 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,11 @@ int	ft_atoi(const char *str)
 	}
 	return (res * sign);
 }
+/*
+#include <stdio.h>
+int	main()
+{
+	printf("%i", ft_atoi("2147483647"));
+	printf("%i", atoi("2147483647"));
+}
+*/
