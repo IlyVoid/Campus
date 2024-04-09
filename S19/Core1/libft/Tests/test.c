@@ -141,7 +141,7 @@ int main()
 	}
 	reset ();
 	printf("%s\n", "----------------------------");
-/* CALLOC TEST
+/*  CALLOC TEST
 	Test one, high INT */
 	a1 = 99999999;
 	a2 = 9999999;
@@ -161,6 +161,7 @@ int main()
 	}
 	free(pa1);
 	free(pa2);
+/*  Test two, size and count neg */
 	reset ();
 	a1 = -2;
 	a2 = -2;
@@ -180,4 +181,47 @@ int main()
 	}
 	free(pa1);
 	free(pa2);
+/*  Test three, neg count with pos size */
+	reset ();
+	a1 = -2752654;
+	a2 = 2;
+	pa1 = ft_calloc(a1, a2);
+	pa2 = calloc(a1, a2);
+	if (pa1 == NULL && pa2 == NULL)
+	{
+		printf("%s", "ft_calloc_T3: ");
+		green ();
+		printf("%s\n", "[OK]");
+	}
+	else
+	{
+		printf("%s", "ft_calloc_T3: ");
+		red ();
+		printf("%s\n", "[KO]");
+	}
+	free(pa1);
+	free(pa2);
+/*  Test four, pos count with neg size */
+	reset ();
+	a1 = 2;
+	a2 = -265436675;
+	pa1 = ft_calloc(a1, a2);
+	pa2 = calloc(a1, a2);
+	if (pa1 == NULL && pa2 == NULL)
+	{
+		printf("%s", "ft_calloc_T4: ");
+		green ();
+		printf("%s\n", "[OK]");
+	}
+	else
+	{
+		printf("%s", "ft_calloc_T4: ");
+		red ();
+		printf("%s\n", "[KO]");
+	}
+	free(pa1);
+	free(pa2);
+/*  ITOA TEST
+	Test one, one number */
+	
 }
