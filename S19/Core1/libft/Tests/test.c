@@ -27,6 +27,7 @@ int main()
 	void	*pa2;
 	int		a1;
 	int		a2;
+	char	*set;
 
 	printf("%s\n", "----------------------------");
 /*	ATOI TEST
@@ -222,6 +223,80 @@ int main()
 	free(pa1);
 	free(pa2);
 /*  ITOA TEST
-	Test one, one number */
-	
+	Test one, normal int */
+	reset ();
+	printf("%s\n", "----------------------------");
+	set = ft_itoa(98);
+	if (strcmp(set, "98") == 0) 
+	{
+		printf("%s", "ft_itoa_T1: ");
+		green ();
+		printf("%s\n", "[OK]");
+	}
+	else
+	{
+		printf("%s", "ft_itoa_T1: ");
+		red ();
+		printf("%s\n", "[KO]");
+	}
+/*	Test two, int max */
+	reset ();
+	set = ft_itoa(2147483647);
+	if (set != NULL && strcmp(set, "2147483647") == 0)
+	{
+		printf("%s", "ft_itoa_T2: ");
+		green();
+		printf("%s\n", "[OK]");
+	}
+	else
+	{
+		printf("%s", "ft_itoa_T2: ");
+		red();
+		printf("%s\n", "[KO]");
+	}
+/*  Test three, NULL test */
+	reset ();
+	set = ft_itoa(0);
+	if (set == NULL)
+	{
+		printf("%s", "ft_itoa_T3: ");
+		green ();
+		printf("%s\n", "[OK]");
+	}
+	else
+	{
+		printf("%s", "ft_itoa_T3: ");
+		red ();
+		printf("%s\n", "[KO]");
+	}
+/* Test four, int min*/
+	reset ();
+	set = ft_itoa(-2147483648);
+	if (set != NULL && strcmp(set, "-2147483648") == 0)
+	{
+		printf("%s", "ft_itoa_T4: ");
+		green();
+		printf("%s\n", "[OK]");
+	}
+	else
+	{
+		printf("%s", "ft_itoa_T4: ");
+		red();
+		printf("%s\n", "[KO]");
+	}
+/* Test five, one over int max */
+	reset ();
+	set = ft_itoa(2147483648);
+	if (set != NULL && strcmp(set, "-2147483648") == 0)
+	{
+		printf("%s", "ft_itoa_T5: ");
+		green();
+		printf("%s\n", "[OK]");
+	}
+	else
+	{
+		printf("%s", "ft_itoa_T5: ");
+		red();
+		printf("%s\n", "[KO]");
+	}
 }
