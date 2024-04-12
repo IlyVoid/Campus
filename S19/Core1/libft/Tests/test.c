@@ -469,7 +469,6 @@ int main()
         red();
         printf("[KO]\n");
     }
-
 /*	Test five, Two memory blocks with different content and different sizes */
     reset ();
     int result5 = ft_memcmp("hello", "world", 3);
