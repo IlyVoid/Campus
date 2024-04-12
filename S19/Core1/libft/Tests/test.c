@@ -299,4 +299,190 @@ int main()
 		red();
 		printf("%s\n", "[KO]");
 	}
+/*  MEMCHR TEST */
+	reset ();
+	printf("%s\n", "----------------------------");
+	char s1[] = "Hello, world!";
+    const void *result;
+
+/*	Test one, finding character 'o' */
+    result = ft_memchr(s1, 'o', strlen(s1));
+    if (result == &s1[4])
+	{
+        printf("%s", "ft_memchr_T1: ");
+		green ();
+		printf("%s\n", "[OK]");
+    }
+	else 
+	{
+        printf("%s", "ft_memchr_T1: ");
+		red ();
+		printf("%s\n", "[KO]");
+    }
+/*	Test two, not finding character 'z' */
+	reset ();
+    result = ft_memchr(s1, 'z', strlen(s1));
+    if (result == NULL)
+	{
+        printf("%s", "ft_memchr_T2: ");
+		green ();
+		printf("%s\n", "[OK]");
+    }
+	else 
+	{
+        printf("%s", "ft_memchr_T2: ");
+		red ();
+		printf("%s\n", "[KO]");
+    }
+/*	Test three, finding character 'o' within first 4 characters */
+	reset ();
+    if (result == NULL)
+	{
+        printf("%s", "ft_memchr_T3: ");
+		green ();
+		printf("%s\n", "[OK]");
+    }
+	else 
+	{
+        printf("%s", "ft_memchr_T3: ");
+		red ();
+		printf("%s\n", "[KO]");
+    }
+/*	Test four, not finding character 'o' within first 3 characters */
+	reset ();
+    result = ft_memchr(s1, 'o', 3);
+    if (result == NULL)
+	{
+        printf("%s", "ft_memchr_T4: ");
+		green ();
+		printf("%s\n", "[OK]");
+    }
+	else 
+	{
+        printf("%s", "ft_memchr_T4: ");
+		red ();
+		printf("%s\n", "[KO]");
+    }
+/*	Test with empty string */
+	reset ();
+    result = ft_memchr("", 'a', 0);
+    if (result == NULL)
+	{
+        printf("%s", "ft_memchr_T5: ");
+		green ();
+		printf("%s\n", "[OK]");
+    }
+	else 
+	{
+        printf("%s", "ft_memchr_T5: ");
+		red ();
+		printf("%s\n", "[KO]");
+    }
+/*	Test with NULL pointer */
+	reset ();
+    result = ft_memchr(NULL, 'a', 5);
+    if (result == NULL)
+	{
+        printf("%s", "ft_memchr_T6: ");
+		green ();
+		printf("%s\n", "[OK]");
+    }
+	else 
+	{
+        printf("%s", "ft_memchr_T6: ");
+		red ();
+		printf("%s\n", "[KO]");
+    }
+/*	Test seven, with single character */
+	reset ();
+    char s2[] = {'a', '\0'};
+    result = ft_memchr(s2, 'a', 1);
+    if (result == &s2[0])
+	{
+        printf("%s", "ft_memchr_T7: ");
+		green ();
+		printf("%s\n", "[OK]");
+    }
+	else 
+	{
+        printf("%s", "ft_memchr_T7: ");
+		red ();
+		printf("%s\n", "[KO]");
+    }
+/*	FT_MEMCMP
+	Test one, Two empty memory blocks */
+    reset ();
+	printf("%s\n", "----------------------------");
+    int result1 = ft_memcmp("", "", 0);
+    if (result1 == 0)
+	{
+        printf("%s", "ft_memcmp_T1: ");
+        green();
+        printf("%s\n", "[OK]");
+    }
+	else
+    {
+        printf("%s", "ft_memcmp_T1: ");
+        red();
+        printf("%s\n", "[KO]");
+    }
+/*	Test two, Two identical memory blocks */
+    reset ();
+    int result2 = ft_memcmp("hello", "hello", 5);
+    if (result2 == 0)
+	{
+        printf("ft_memcmp_T2: ");
+        green();
+        printf("[OK]\n");
+    }
+	else
+	{
+		printf("ft_memcmp_T2: ");
+        red();
+        printf("[KO]\n");
+    }
+/*	Test three, Two memory blocks with different sizes but identical content */
+    reset ();
+    int result3 = ft_memcmp("world", "world", 3);
+    if (result3 == 0)
+	{
+        printf("ft_memcmp_T3: ");
+        green();
+        printf("[OK]\n");
+    }
+	else
+	{
+        printf("ft_memcmp_T3: ");
+        red();
+        printf("[KO]\n");
+    }
+/*	Test four, Two memory blocks with different content but same size */
+    reset ();
+    int result4 = ft_memcmp("hello", "world", 5);
+    if (result4 == -15)
+	{
+        printf("ft_memcmp_T4: ");
+        green();
+        printf("[OK]\n");
+    } else {
+        printf("ft_memcmp_T4: ");
+        red();
+        printf("[KO]\n");
+    }
+
+/*	Test five, Two memory blocks with different content and different sizes */
+    reset ();
+    int result5 = ft_memcmp("hello", "world", 3);
+    if (result5 == -15)
+	{
+        printf("ft_memcmp_T5: ");
+        green();
+        printf("[OK]\n");
+    }
+	else
+	{
+        printf("ft_memcmp_T5: ");
+        red();
+        printf("[KO]\n");
+    }
 }
