@@ -488,34 +488,38 @@ int main()
 	Test one, Copying from src to dest */
     reset();
 	printf("%s\n", "----------------------------");
-    char dest1[10] = "";
-    char src1[] = "hello";
-    printf("Result 1: %s\n", dest1);
-    if (strcmp(dest1, "hello") == 0)
+	char dest1[10] = "";
+	char src1[] = "hello";
+
+	ft_memcpy(dest1, src1, strlen(src1) + 1);
+	if (strcmp(dest1, src1) == 0)
 	{
-        printf("ft_memcpy_T1: ");
-        green();
-        printf("[OK]\n");
-    }
+		printf("ft_memcpy_T1: ");
+		green();
+		printf("[OK]\n");
+	}
 	else
 	{
-        printf("ft_memcpy_T1: ");
-        red();
-        printf("[KO]\n");
-    }
+		printf("ft_memcpy_T1: ");
+		red();
+		printf("[KO]\n");
+	}
 /*	Test two, Copying from src to dest with NULL destination pointer */
     reset();
-    char *dest2 = NULL;
-    char src2[] = "world";
-    if (dest2 == NULL) {
-        printf("ft_memcpy_T2: ");
-        green();
-        printf("[OK]\n");
-    }
+	char src2[] = "world";
+	char *dest_ptr = NULL;
+
+	char *res = ft_memcpy(dest_ptr, src2, strlen(src2));
+	if (res == NULL)
+	{
+		printf("ft_memcpy_T2: ");
+		green();
+		printf("[OK]\n");
+	}
 	else
 	{
-        printf("ft_memcpy_T2: ");
-        red();
-        printf("[KO]\n");
-    }
+		printf("ft_memcpy_T2: ");
+		red();
+		printf("[KO]\n");
+	}
 }
