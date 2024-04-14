@@ -36,13 +36,13 @@ int main()
 	p2 = atoi("2147483647");
 	if (p1 == p2)
 	{
-		printf("%s", "ft_atoi_T1: ");
+		printf("%s", "ft_atoi_T1:      ");
 		green ();
 		printf("%s\n", "[OK]");
 	}
 	else
 	{
-		printf("%s", "ft_atoi_T1: ");
+		printf("%s", "ft_atoi_T1:      ");
 		red ();
 		printf("%s\n", "[KO]");
 	}
@@ -52,13 +52,13 @@ int main()
 	p2 = atoi("214748364888888888");
 	if (p1 == p2)
 	{
-		printf("%s", "ft_atoi_T2: ");
+		printf("%s", "ft_atoi_T2:      ");
 		green ();
 		printf("%s\n", "[OK]");
 	}
 	else
 	{
-		printf("%s", "ft_atoi_T2: ");
+		printf("%s", "ft_atoi_T2:      ");
 		red ();
 		printf("%s\n", "[KO]");
 	}
@@ -68,13 +68,13 @@ int main()
 	p2 = atoi("");
 	if (p1 == p2)
 	{
-		printf("%s", "ft_atoi_T3: ");
+		printf("%s", "ft_atoi_T3:      ");
 		green ();
 		printf("%s\n", "[OK]");
 	}
 	else
 	{
-		printf("%s", "ft_atoi_T3: ");
+		printf("%s", "ft_atoi_T3:      ");
 		red ();
 		printf("%s\n", "[KO]");
 	}
@@ -90,13 +90,13 @@ int main()
 	bzero(&pa2, 6);
 	if (pa1 == pa2)
 	{
-		printf("%s", "ft_bzero_T1: ");
+		printf("%s", "ft_bzero_T1:     ");
 		green ();
 		printf("%s\n", "[OK]");
 	}
 	else
 	{
-		printf("%s", "ft_bzero_T1: ");
+		printf("%s", "ft_bzero_T1:     ");
 		red ();
 		printf("%s\n", "[KO]");
 	}
@@ -110,13 +110,13 @@ int main()
 	bzero(&pa2, 6);
 	if (pa1 == pa2)
 	{
-		printf("%s", "ft_bzero_T2: ");
+		printf("%s", "ft_bzero_T2:     ");
 		green ();
 		printf("%s\n", "[OK]");
 	}
 	else
 	{
-		printf("%s", "ft_bzero_T2: ");
+		printf("%s", "ft_bzero_T2:     ");
 		red ();
 		printf("%s\n", "[KO]");
 	}
@@ -130,13 +130,13 @@ int main()
 	bzero(&pa2, 6);
 	if (pa1 == pa2)
 	{
-		printf("%s", "ft_bzero_T3: ");
+		printf("%s", "ft_bzero_T3:     ");
 		green ();
 		printf("%s\n", "[OK]");
 	}
 	else
 	{
-		printf("%s", "ft_bzero_T3: ");
+		printf("%s", "ft_bzero_T3:     ");
 		red ();
 		printf("%s\n", "[KO]");
 	}
@@ -150,13 +150,13 @@ int main()
 	pa2 = calloc(a1, a2);
 	if (pa1 == pa2)
 	{
-		printf("%s", "ft_calloc_T1: ");
+		printf("%s", "ft_calloc_T1:    ");
 		green ();
 		printf("%s\n", "[OK]");
 	}
 	else
 	{
-		printf("%s", "ft_calloc_T1: ");
+		printf("%s", "ft_calloc_T1:    ");
 		red ();
 		printf("%s\n", "[KO]");
 	}
@@ -170,13 +170,13 @@ int main()
 	pa2 = calloc(a1, a2);
 	if (pa1 == NULL && pa2 == NULL)
 	{
-		printf("%s", "ft_calloc_T2: ");
+		printf("%s", "ft_calloc_T2:    ");
 		green ();
 		printf("%s\n", "[OK]");
 	}
 	else
 	{
-		printf("%s", "ft_calloc_T2: ");
+		printf("%s", "ft_calloc_T2:    ");
 		red ();
 		printf("%s\n", "[KO]");
 	}
@@ -190,13 +190,13 @@ int main()
 	pa2 = calloc(a1, a2);
 	if (pa1 == NULL && pa2 == NULL)
 	{
-		printf("%s", "ft_calloc_T3: ");
+		printf("%s", "ft_calloc_T3:    ");
 		green ();
 		printf("%s\n", "[OK]");
 	}
 	else
 	{
-		printf("%s", "ft_calloc_T3: ");
+		printf("%s", "ft_calloc_T3:    ");
 		red ();
 		printf("%s\n", "[KO]");
 	}
@@ -210,13 +210,13 @@ int main()
 	pa2 = calloc(a1, a2);
 	if (pa1 == NULL && pa2 == NULL)
 	{
-		printf("%s", "ft_calloc_T4: ");
+		printf("%s", "ft_calloc_T4:    ");
 		green ();
 		printf("%s\n", "[OK]");
 	}
 	else
 	{
-		printf("%s", "ft_calloc_T4: ");
+		printf("%s", "ft_calloc_T4:    ");
 		red ();
 		printf("%s\n", "[KO]");
 	}
@@ -229,13 +229,13 @@ int main()
 	set = ft_itoa(98);
 	if (strcmp(set, "98") == 0) 
 	{
-		printf("%s", "ft_itoa_T1: ");
+		printf("%s", "ft_itoa_T1:      ");
 		green ();
 		printf("%s\n", "[OK]");
 	}
 	else
 	{
-		printf("%s", "ft_itoa_T1: ");
+		printf("%s", "ft_itoa_T1:      ");
 		red ();
 		printf("%s\n", "[KO]");
 	}
@@ -244,13 +244,13 @@ int main()
 	set = ft_itoa(2147483647);
 	if (set != NULL && strcmp(set, "2147483647") == 0)
 	{
-		printf("%s", "ft_itoa_T2: ");
+		printf("%s", "ft_itoa_T2:      ");
 		green();
 		printf("%s\n", "[OK]");
 	}
 	else
 	{
-		printf("%s", "ft_itoa_T2: ");
+		printf("%s", "ft_itoa_T2:      ");
 		red();
 		printf("%s\n", "[KO]");
 	}
@@ -259,13 +259,13 @@ int main()
 	set = ft_itoa(0);
 	if (set == NULL)
 	{
-		printf("%s", "ft_itoa_T3: ");
+		printf("%s", "ft_itoa_T3:      ");
 		green ();
 		printf("%s\n", "[OK]");
 	}
 	else
 	{
-		printf("%s", "ft_itoa_T3: ");
+		printf("%s", "ft_itoa_T3:      ");
 		red ();
 		printf("%s\n", "[KO]");
 	}
@@ -274,13 +274,13 @@ int main()
 	set = ft_itoa(-2147483648);
 	if (set != NULL && strcmp(set, "-2147483648") == 0)
 	{
-		printf("%s", "ft_itoa_T4: ");
+		printf("%s", "ft_itoa_T4:      ");
 		green();
 		printf("%s\n", "[OK]");
 	}
 	else
 	{
-		printf("%s", "ft_itoa_T4: ");
+		printf("%s", "ft_itoa_T4:      ");
 		red();
 		printf("%s\n", "[KO]");
 	}
@@ -289,13 +289,13 @@ int main()
 	set = ft_itoa(2147483648);
 	if (set != NULL && strcmp(set, "-2147483648") == 0)
 	{
-		printf("%s", "ft_itoa_T5: ");
+		printf("%s", "ft_itoa_T5:      ");
 		green();
 		printf("%s\n", "[OK]");
 	}
 	else
 	{
-		printf("%s", "ft_itoa_T5: ");
+		printf("%s", "ft_itoa_T5:      ");
 		red();
 		printf("%s\n", "[KO]");
 	}
@@ -309,13 +309,13 @@ int main()
     result = ft_memchr(s1, 'o', strlen(s1));
     if (result == &s1[4])
 	{
-        printf("%s", "ft_memchr_T1: ");
+        printf("%s", "ft_memchr_T1:    ");
 		green ();
 		printf("%s\n", "[OK]");
     }
 	else 
 	{
-        printf("%s", "ft_memchr_T1: ");
+        printf("%s", "ft_memchr_T1:    ");
 		red ();
 		printf("%s\n", "[KO]");
     }
@@ -324,13 +324,13 @@ int main()
     result = ft_memchr(s1, 'z', strlen(s1));
     if (result == NULL)
 	{
-        printf("%s", "ft_memchr_T2: ");
+        printf("%s", "ft_memchr_T2:    ");
 		green ();
 		printf("%s\n", "[OK]");
     }
 	else 
 	{
-        printf("%s", "ft_memchr_T2: ");
+        printf("%s", "ft_memchr_T2:    ");
 		red ();
 		printf("%s\n", "[KO]");
     }
@@ -338,13 +338,13 @@ int main()
 	reset ();
     if (result == NULL)
 	{
-        printf("%s", "ft_memchr_T3: ");
+        printf("%s", "ft_memchr_T3:    ");
 		green ();
 		printf("%s\n", "[OK]");
     }
 	else 
 	{
-        printf("%s", "ft_memchr_T3: ");
+        printf("%s", "ft_memchr_T3:    ");
 		red ();
 		printf("%s\n", "[KO]");
     }
@@ -353,13 +353,13 @@ int main()
     result = ft_memchr(s1, 'o', 3);
     if (result == NULL)
 	{
-        printf("%s", "ft_memchr_T4: ");
+        printf("%s", "ft_memchr_T4:     ");
 		green ();
 		printf("%s\n", "[OK]");
     }
 	else 
 	{
-        printf("%s", "ft_memchr_T4: ");
+        printf("%s", "ft_memchr_T4:    ");
 		red ();
 		printf("%s\n", "[KO]");
     }
@@ -368,13 +368,13 @@ int main()
     result = ft_memchr("", 'a', 0);
     if (result == NULL)
 	{
-        printf("%s", "ft_memchr_T5: ");
+        printf("%s", "ft_memchr_T5:    ");
 		green ();
 		printf("%s\n", "[OK]");
     }
 	else 
 	{
-        printf("%s", "ft_memchr_T5: ");
+        printf("%s", "ft_memchr_T5:    ");
 		red ();
 		printf("%s\n", "[KO]");
     }
@@ -383,13 +383,13 @@ int main()
     result = ft_memchr(NULL, 'a', 5);
     if (result == NULL)
 	{
-        printf("%s", "ft_memchr_T6: ");
+        printf("%s", "ft_memchr_T6:    ");
 		green ();
 		printf("%s\n", "[OK]");
     }
 	else 
 	{
-        printf("%s", "ft_memchr_T6: ");
+        printf("%s", "ft_memchr_T6:    ");
 		red ();
 		printf("%s\n", "[KO]");
     }
@@ -399,30 +399,30 @@ int main()
     result = ft_memchr(s2, 'a', 1);
     if (result == &s2[0])
 	{
-        printf("%s", "ft_memchr_T7: ");
+        printf("%s", "ft_memchr_T7:    ");
 		green ();
 		printf("%s\n", "[OK]");
     }
 	else 
 	{
-        printf("%s", "ft_memchr_T7: ");
+        printf("%s", "ft_memchr_T7:    ");
 		red ();
 		printf("%s\n", "[KO]");
     }
-/*	FT_MEMCMP
+/*	MEMCMP TEST
 	Test one, Two empty memory blocks */
     reset ();
 	printf("%s\n", "----------------------------");
     int result1 = ft_memcmp("", "", 0);
     if (result1 == 0)
 	{
-        printf("%s", "ft_memcmp_T1: ");
+        printf("%s", "ft_memcmp_T1:    ");
         green();
         printf("%s\n", "[OK]");
     }
 	else
     {
-        printf("%s", "ft_memcmp_T1: ");
+        printf("%s", "ft_memcmp_T1:    ");
         red();
         printf("%s\n", "[KO]");
     }
@@ -431,13 +431,13 @@ int main()
     int result2 = ft_memcmp("hello", "hello", 5);
     if (result2 == 0)
 	{
-        printf("ft_memcmp_T2: ");
+        printf("ft_memcmp_T2:          ");
         green();
         printf("[OK]\n");
     }
 	else
 	{
-		printf("ft_memcmp_T2: ");
+		printf("ft_memcmp_T2:          ");
         red();
         printf("[KO]\n");
     }
@@ -446,13 +446,13 @@ int main()
     int result3 = ft_memcmp("world", "world", 3);
     if (result3 == 0)
 	{
-        printf("ft_memcmp_T3: ");
+        printf("ft_memcmp_T3:          ");
         green();
         printf("[OK]\n");
     }
 	else
 	{
-        printf("ft_memcmp_T3: ");
+        printf("ft_memcmp_T3:          ");
         red();
         printf("[KO]\n");
     }
@@ -461,11 +461,13 @@ int main()
     int result4 = ft_memcmp("hello", "world", 5);
     if (result4 == -15)
 	{
-        printf("ft_memcmp_T4: ");
+        printf("ft_memcmp_T4:          ");
         green();
         printf("[OK]\n");
-    } else {
-        printf("ft_memcmp_T4: ");
+    }
+	else
+	{
+        printf("ft_memcmp_T4:          ");
         red();
         printf("[KO]\n");
     }
@@ -474,17 +476,17 @@ int main()
     int result5 = ft_memcmp("hello", "world", 3);
     if (result5 == -15)
 	{
-        printf("ft_memcmp_T5: ");
+        printf("ft_memcmp_T5:          ");
         green();
         printf("[OK]\n");
     }
 	else
 	{
-        printf("ft_memcmp_T5: ");
+        printf("ft_memcmp_T5:          ");
         red();
         printf("[KO]\n");
     }
-/*	MEMCPY
+/*	MEMCPY TEST
 	Test one, Copying from src to dest */
     reset();
 	printf("%s\n", "----------------------------");
@@ -494,32 +496,148 @@ int main()
 	ft_memcpy(dest1, src1, strlen(src1) + 1);
 	if (strcmp(dest1, src1) == 0)
 	{
-		printf("ft_memcpy_T1: ");
+		printf("ft_memcpy_T1:          ");
 		green();
 		printf("[OK]\n");
 	}
 	else
 	{
-		printf("ft_memcpy_T1: ");
+		printf("ft_memcpy_T1:          ");
 		red();
 		printf("[KO]\n");
 	}
-/*	Test two, Copying from src to dest with NULL destination pointer */
+/*	MEMMOVE TEST
+	Test one, non overlapping copy */
+	reset();
+	printf("%s\n", "----------------------------");
+/*	Test one, Copying from a smaller source buffer to a larger destination buffer */
     reset();
-	char src2[] = "world";
-	char *dest_ptr = NULL;
-
-	char *res = ft_memcpy(dest_ptr, src2, strlen(src2));
-	if (res == NULL)
+    char move_dest1[10] = "world";
+    char move_src1[] = "hello";
+    ft_memmove(move_dest1, move_src1, 5);
+    if (strcmp(move_dest1, "hello") == 0)
 	{
-		printf("ft_memcpy_T2: ");
-		green();
-		printf("[OK]\n");
-	}
+        printf("ft_memmove_T1:      ");
+        green();
+        printf("[OK]\n");
+    }
 	else
 	{
-		printf("ft_memcpy_T2: ");
-		red();
-		printf("[KO]\n");
-	}
+        printf("ft_memmove_T1:      ");
+        red();
+        printf("[KO]\n");
+    }
+/*	Test two, Copying from a larger source buffer to a smaller destination buffer */
+    reset();
+    char move_dest2[] = "world";
+    char move_src2[10] = "hello";
+    ft_memmove(move_dest2, move_src2, 5);
+    if (strcmp(move_dest2, "hello") == 0)
+	{
+        printf("ft_memmove_T2:      ");
+        green();
+        printf("[OK]\n");
+    }
+	else
+	{
+        printf("ft_memmove_T2:      ");
+        red();
+        printf("[KO]\n");
+    }
+/*	Test three, Copying from a buffer to itself with no overlapping regions */
+    reset();
+    char buffer1[] = "abcdefgh";
+    ft_memmove(buffer1 + 2, buffer1, 4);
+    if (strcmp(buffer1, "ababcdgh") == 0)
+	{
+        printf("ft_memmove_T3:     ");
+        green();
+        printf("[OK]\n");
+    }
+	else
+	{
+        printf("ft_memmove_T3:     ");
+        red();
+        printf("[KO]\n");
+    }
+/*	Test four, Copying from a buffer to itself with overlapping regions */
+    reset();
+    char buffer2[] = "abcdefgh";
+    ft_memmove(buffer2 + 2, buffer2 + 4, 4);
+    if (strcmp(buffer2, "abefefgh") == 0)
+	{
+        printf("ft_memmove_T4:      ");
+        green();
+        printf("[OK]\n");
+    }
+	else
+	{
+        printf("ft_memmove_T4:      ");
+        red();
+        printf("[KO]\n");
+    }
+/*	Test five, Copying from one buffer to another without overlapping */
+    reset();
+    char buffer3[20] = "abcdefgh";
+    char buffer4[] = "12345678";
+    ft_memmove(buffer3, buffer4, 4);
+    if (strcmp(buffer3, "1234efgh") == 0)
+	{
+        printf("ft_memmove_T5:      ");
+        green();
+        printf("[OK]\n");
+    }
+	else
+	{
+        printf("ft_memmove_T5:       ");
+        red();
+        printf("[KO]\n");
+    }
+/*	Test six, Copying from one buffer to another with overlapping */
+    reset();
+    char buffer5[] = "abcdefgh";
+    ft_memmove(buffer5 + 2, buffer5, 6);
+    if (strcmp(buffer5, "ababefgh") == 0)
+	{
+        printf("ft_memmove_T6:       ");
+        green();
+        printf("[OK]\n");
+    }
+	else
+	{
+        printf("ft_memmove_T6:       ");
+        red();
+        printf("[KO]\n");
+    }
+/*	Test seven, Copying with a zero size */
+    reset();
+    char move_dest4[] = "world";
+    char move_src4[] = "hello";
+    ft_memmove(move_dest4, move_src4, 0);
+    if (strcmp(move_dest4, "world") == 0)
+	{
+        printf("ft_memmove_T7:      ");
+        green();
+        printf("[OK]\n");
+    }
+	else
+	{
+        printf("ft_memmove_T7:      ");
+        red();
+        printf("[KO]\n");
+    }
+/*	Test eight, Copying with NULL pointers for both source and destination */
+    reset();
+    void *move_dest5 = NULL;
+    const void *move_src5 = NULL;
+    ft_memmove(move_dest5, move_src5, 5);
+    if (move_dest5 == NULL) {
+        printf("ft_memmove_T8:      ");
+        green();
+        printf("[OK]\n");
+    } else {
+        printf("ft_memmove_T8:      ");
+        red();
+        printf("[KO]\n");
+    }
 }

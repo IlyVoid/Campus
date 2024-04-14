@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:03:09 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/12 17:19:47 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/13 17:18:53 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,15 @@
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	char	*d;
-	char	*s;
-	size_t	i;
+	const char	*s;
 
-	i = 0;
-	d = (char *)dest;
-	s = (char *)src;
 	if (dest == NULL && src == NULL)
 		return (NULL);
-	while (i < n)
+	d = (char *)dest;
+	s = (const char *)src;
+	while (n--)
 	{
-		d[i] = s[i];
-		i++;
+		*d++ = *s++;
 	}
 	return (dest);
 }
