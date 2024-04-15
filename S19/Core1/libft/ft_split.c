@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:06:04 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/08 12:06:56 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:03:23 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,61 +14,58 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-static int	check_sep(char c, char sep)
+static int	count_strs(char *s, char c)
 {
-	if (c == sep)
-		return (1);
-	if (c == 0)
-		return (1);
-	return (0);
-}
-
-static int	count_strs(char *str, char c)
-{
-	int	i;
+	int	is_word;
 	int	count;
 
+	is_word = 0;
 	count = 0;
-	i = 0;
-	while (str[i] != '\0')
+	while (*str != '\0')
 	{
-		while (str[i] != '\0' && check_sep(str[i], c))
-			i++;
-		if (str[i] != '\0')
+		if (*s c && !is_word)
+		{
 			count++;
-		while (str[i] != '\0' && !check_sep(str[i], c))
-			i++;
+			is_word = 1;
+		}
+		else if (checksep(*str, c))
+			is_word = 0;
+		str++;
 	}
 	return (count);
 }
 
 static int	ft_word_len(char *str, char c)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	while (str[i] && !check_sep(str[i], c))
-		i++;
-	return (i);
+	len = 0;
+	while (*str != '\0' && !check_sep(*str, c))
+	{
+		len++;
+		str++;
+	}
+	return (len);
 }
 
 static char	*ft_word(char *str, char c)
 {
 	int		len_word;
-	int		i;
 	char	*word;
+	int		i;
 
-	i = 0;
 	len_word = ft_word_len(str, c);
 	word = (char *)malloc(sizeof(char) * (len_word + 1));
 	if (!word)
 		return (NULL);
+	i = 0;
 	while (i < len_word)
 	{
-		word[i] = str[i];
+		word[i] = *str;
 		i++;
+		str++;
 	}
-	word[i] = '\0';
+	word[len_word] = '\0';
 	return (word);
 }
 
@@ -77,26 +74,25 @@ char	**ft_split(const char *str, char c)
 	char	**strings;
 	int		i;
 
-	i = 0;
-	strings = (char **)malloc(sizeof(char *) * (count_strs((char *)str, c)
-				+ 1));
-	if (!strings)
-	{
-		free(strings);
+	if (str == NULL)
 		return (NULL);
-	}
+	strings = malloc(sizeof(char *) * (count_strs((char *)str, c) + 1);
+	if (!strings)
+		return (free(strings), NULL);
+	i = 0;
 	while (*str != '\0')
 	{
-		while (*str != '\0' && check_sep(*str, c))
-			str++;
-		if (*str != '\0')
+		if (!check_sep(*str, c))
 		{
 			strings[i] = ft_word((char *)str, c);
+			if (strings[i] == NULL)
+				return (NULL);
 			i++;
+			while (*str != '\0' && !check_sep(*str++, c))
 		}
-		while (*str && !check_sep(*str, c))
+		else
 			str++;
 	}
-	strings[i] = 0;
+	strings[i] = NULL;
 	return (strings);
 }

@@ -560,11 +560,12 @@ int main()
         red();
         printf("[KO]\n");
     }
-/*	Test four, Copying from a buffer to itself with overlapping regions */
+/*	Test four, Copying from one buffer to another without overlapping */
     reset();
-    char buffer2[] = "abcdefgh";
-    ft_memmove(buffer2 + 2, buffer2 + 4, 4);
-    if (strcmp(buffer2, "abefefgh") == 0)
+    char buffer3[20] = "abcdefgh";
+    char buffer4[] = "12345678";
+    ft_memmove(buffer3, buffer4, 4);
+    if (strcmp(buffer3, "1234efgh") == 0)
 	{
         printf("ft_memmove_T4:      ");
         green();
@@ -572,16 +573,16 @@ int main()
     }
 	else
 	{
-        printf("ft_memmove_T4:      ");
+        printf("ft_memmove_T4:       ");
         red();
         printf("[KO]\n");
     }
-/*	Test five, Copying from one buffer to another without overlapping */
+/*	Test five, Copying with a zero size */
     reset();
-    char buffer3[20] = "abcdefgh";
-    char buffer4[] = "12345678";
-    ft_memmove(buffer3, buffer4, 4);
-    if (strcmp(buffer3, "1234efgh") == 0)
+    char move_dest4[] = "world";
+    char move_src4[] = "hello";
+    ft_memmove(move_dest4, move_src4, 0);
+    if (strcmp(move_dest4, "world") == 0)
 	{
         printf("ft_memmove_T5:      ");
         green();
@@ -589,55 +590,234 @@ int main()
     }
 	else
 	{
-        printf("ft_memmove_T5:       ");
+        printf("ft_memmove_T5:      ");
         red();
         printf("[KO]\n");
     }
-/*	Test six, Copying from one buffer to another with overlapping */
-    reset();
-    char buffer5[] = "abcdefgh";
-    ft_memmove(buffer5 + 2, buffer5, 6);
-    if (strcmp(buffer5, "ababefgh") == 0)
-	{
-        printf("ft_memmove_T6:       ");
-        green();
-        printf("[OK]\n");
-    }
-	else
-	{
-        printf("ft_memmove_T6:       ");
-        red();
-        printf("[KO]\n");
-    }
-/*	Test seven, Copying with a zero size */
-    reset();
-    char move_dest4[] = "world";
-    char move_src4[] = "hello";
-    ft_memmove(move_dest4, move_src4, 0);
-    if (strcmp(move_dest4, "world") == 0)
-	{
-        printf("ft_memmove_T7:      ");
-        green();
-        printf("[OK]\n");
-    }
-	else
-	{
-        printf("ft_memmove_T7:      ");
-        red();
-        printf("[KO]\n");
-    }
-/*	Test eight, Copying with NULL pointers for both source and destination */
+/*	Test six, Copying with NULL pointers for both source and destination */
     reset();
     void *move_dest5 = NULL;
     const void *move_src5 = NULL;
     ft_memmove(move_dest5, move_src5, 5);
     if (move_dest5 == NULL) {
-        printf("ft_memmove_T8:      ");
+        printf("ft_memmove_T6:      ");
         green();
         printf("[OK]\n");
     } else {
-        printf("ft_memmove_T8:      ");
+        printf("ft_memmove_T6:      ");
         red();
         printf("[KO]\n");
     }
+/*	MEMSET TEST
+	Test one, Setting the first 5 characters of a 10-character array to 'a' */
+	reset();
+    printf("%s\n", "----------------------------");
+    char test1[10] = "";
+    ft_memset(test1, 'a', 5);
+    if (strcmp(test1, "aaaaa\0\0\0\0") == 0)
+	{
+        printf("ft_memset_T1:     ");
+		green ();
+		printf("%s\n", "[OK]");
+    }
+	else
+	{
+		printf("ft_memset_T1:     ");
+		red ();
+        printf("%s\n", "[KO]");
+    }
+/*	Test two, Setting 0 characters of a 5-character array to 'b' */
+	reset ();
+    char test2[5] = "test";
+    ft_memset(test2, 'b', 0);
+    if (strcmp(test2, "test") == 0)
+	{
+        printf("ft_memset_T2:     ");
+		green ();
+		printf("%s\n", "[OK]");
+    }
+	else
+	{
+		printf("ft_memset_T2:     ");
+		red ();
+        printf("%s\n", "[KO]");
+    }
+/*	Test three, Setting all characters of a 5-character array to 'c' */
+	reset ();
+    char test3[5] = "test";
+    ft_memset(test3, 'c', sizeof(test3));
+    if (strcmp(test3, "ccccc") == 0)
+	{
+        printf("ft_memset_T3:     ");
+		green ();
+		printf("%s\n", "[OK]");
+    }
+	else
+	{
+		printf("ft_memset_T3:     ");
+		red ();
+        printf("%s\n", "[KO]");
+    }
+/*	Test four, Setting all characters of an empty array to 'd' */
+	reset ();
+    char test4[5] = {0};
+    ft_memset(test4, 'd', sizeof(test4) - 1);
+    if (strcmp(test4, "dddd") == 0)
+	{
+        printf("ft_memset_T4:     ");
+		green ();
+		printf("%s\n", "[OK]");
+    }
+	else
+	{
+		printf("ft_memset_T4:     ");
+		red ();
+        printf("%s\n", "[KO]");
+    }
+/*	SPLIT TEST
+	Test one, empty string */
+	reset();
+    printf("%s\n", "----------------------------");
+	char	*str1 = "";
+	char	c1 = 'c';
+	char	**res1 = ft_split(str1, c1);
+
+	if (res1 != NULL && res1[0] == NULL)
+	{
+		printf("ft_split_T1:     ");
+		green ();
+		printf("%s\n", "[OK]");
+	}
+	else
+	{
+		printf("ft_split_T1:     ");
+		red ();
+		printf("%s\n", "[KO]");
+	}
+/*	Test two, single char input */
+	reset ();
+	char	*str2 = "c";
+	char	c2 = ' ';
+	char	**res2 = ft_split(str2, c2);
+
+	if (res2 != NULL)
+	{
+		if (strcmp(res2[0], str2) == 0 && res2[1] == NULL)
+		{
+			printf("ft_split_T2:     ");
+			green ();
+			printf("%s\n", "[OK]");
+		}
+		else
+		{
+			printf("ft_split_T2:     ");
+			red ();
+			printf("%s\n", "[KO]");
+		}
+	}
+/*	Test three, single sep input */
+	reset ();
+	char	*str3 = ",";
+	char	c3 = ' ';
+	char	**res3 = ft_split(str3, c3);
+
+	if (res3 != NULL)
+	{
+		if (strcmp(res3[0], str3) == 0 && res3[1] == NULL)
+		{
+			printf("ft_split_T3:     ");
+			green ();
+			printf("%s\n", "[OK]");
+		}
+		else
+		{
+			printf("ft_split_T3:     ");
+			red ();
+			printf("%s\n", "[KO]");
+		}
+	}
+/*	Test four, multiple consecutive sep input */
+	reset ();
+	char	*str4 = ",,,,,,";
+	char	c4 = ' ';
+	char	**res4 = ft_split(str4, c4);
+
+	if (res4 != NULL)
+	{
+		if (strcmp(res4[0], str4) == 0 && res4[1] == NULL)
+		{
+			printf("ft_split_T4:     ");
+			green ();
+			printf("%s\n", "[OK]");
+		}
+		else
+		{
+			printf("ft_split_T4:     ");
+			red ();
+			printf("%s\n", "[KO]");
+		}
+	}
+/*	Test five, string without sep input */
+	reset ();
+	char	*str5 = "hello";
+	char	c5 = ' ';
+	char	**res5 = ft_split(str5, c5);
+
+	if (res5 != NULL)
+	{
+		if (strcmp(res5[0], str5) == 0 && res5[1] == NULL)
+		{
+			printf("ft_split_T5:     ");
+			green ();
+			printf("%s\n", "[OK]");
+		}
+		else
+		{
+			printf("ft_split_T5:     ");
+			red ();
+			printf("%s\n", "[KO]");
+		}
+	}
+/*	Test six, leading and ending sep */
+	reset ();
+	char	*str6 = ",hello,";
+	char	c6 = ' ';
+	char	**res6 = ft_split(str6, c6);
+
+	if (res6 != NULL)
+	{
+		if (strcmp(res6[0], str6) == 0 && res6[1] == NULL)
+		{
+			printf("ft_split_T6:     ");
+			green ();
+			printf("%s\n", "[OK]");
+		}
+		else
+		{
+			printf("ft_split_T6:     ");
+			red ();
+			printf("%s\n", "[KO]");
+		}
+	}
+/*	Test seven, multiple sep within string */
+	reset ();
+	char	*str7 = "hello,bye,world";
+	char	c7 = ' ';
+	char	**res7 = ft_split(str7, c7);
+
+	if (res7 != NULL)
+	{
+		if (strcmp(res7[0], str7) == 0 && res7[1] == NULL)
+		{
+			printf("ft_split_T7:     ");
+			green ();
+			printf("%s\n", "[OK]");
+		}
+		else
+		{
+			printf("ft_split_T7:     ");
+			red ();
+			printf("%s\n", "[KO]");
+		}
+	}
 }

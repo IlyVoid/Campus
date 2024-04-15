@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:03:14 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/14 12:24:43 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/15 10:43:54 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,27 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
-	unsigned char		*temp;
+	size_t	len;
 
 	if (dst == NULL && src == NULL)
 		return (NULL);
-
-	d = (unsigned char *)dst;
-	s = (const unsigned char *)src;
-
-	if (d == s)
+	if (src < dst)
 	{
-		temp = (unsigned char *)malloc(n);
-		if (temp == NULL)
-			return (NULL);
-		while (n--)
-			temp[n] = s[n];
-		while (n--)
-			d[n] = temp[n];
-		free(temp);
-	}
-	else if (d > s && d < s + n)
-	{
-		while (n--)
-			*(d + n) = *(s + n);
+		len = n;
+		while (len > 0)
+		{
+			len--;
+			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
+		}
 	}
 	else
 	{
-		while (n--)
-			*d++ = *s++;
+		len = 0;
+		while (len < n)
+		{
+			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
+			len++;
+		}
 	}
 	return (dst);
 }
