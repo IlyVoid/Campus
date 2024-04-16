@@ -16,21 +16,21 @@
 
 static int	count_strs(char *s, char c)
 {
-	int	is_word;
 	int	count;
+	int	i;
 
-	is_word = 0;
 	count = 0;
-	while (*str != '\0')
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if (*s c && !is_word)
+		if (check_sep(s[i], c))
+			i++;
+		else
 		{
 			count++;
-			is_word = 1;
+			while (s[i] != '\0' && !check_sep(s[i], c))
+				i++;
 		}
-		else if (checksep(*str, c))
-			is_word = 0;
-		str++;
 	}
 	return (count);
 }
@@ -40,7 +40,7 @@ static int	ft_word_len(char *str, char c)
 	int	len;
 
 	len = 0;
-	while (*str != '\0' && !check_sep(*str, c))
+	while (*str != '\0' && *str != c)
 	{
 		len++;
 		str++;
@@ -50,49 +50,49 @@ static int	ft_word_len(char *str, char c)
 
 static char	*ft_word(char *str, char c)
 {
-	int		len_word;
 	char	*word;
 	int		i;
 
-	len_word = ft_word_len(str, c);
-	word = (char *)malloc(sizeof(char) * (len_word + 1));
+	i = 0;
+	word = (char *)malloc(sizeof(char) * (ft_word_len(str, c) + 1));
 	if (!word)
 		return (NULL);
-	i = 0;
-	while (i < len_word)
+	while (*str != '\0' && *str != c)
 	{
 		word[i] = *str;
 		i++;
 		str++;
 	}
-	word[len_word] = '\0';
+	word[i] = '\0';
 	return (word);
 }
 
 char	**ft_split(const char *str, char c)
 {
-	char	**strings;
+	char	**tab;
 	int		i;
+	int		j;
 
-	if (str == NULL)
+	if (!str)
 		return (NULL);
-	strings = malloc(sizeof(char *) * (count_strs((char *)str, c) + 1);
-	if (!strings)
-		return (free(strings), NULL);
+	tab = (char **)malloc(sizeof(char *) * (count_strs((char *)str, c) + 1));
+	if (!tab)
+		return (NULL);
 	i = 0;
-	while (*str != '\0')
+	j = 0;
+	while (str[i] != '\0')
 	{
-		if (!check_sep(*str, c))
-		{
-			strings[i] = ft_word((char *)str, c);
-			if (strings[i] == NULL)
-				return (NULL);
+		if (check_sep(str[i], c))
 			i++;
-			while (*str != '\0' && !check_sep(*str++, c))
-		}
 		else
-			str++;
+		{
+			tab[j] = ft_word((char *)&str[i], c);
+			if (!tab[j])
+				return (ft_free_tab(tab, j));
+			j++;
+			i += ft_word_len((char *)&str[i], c);
+		}
 	}
-	strings[i] = NULL;
-	return (strings);
+	tab[j] = NULL;
+	return (tab);
 }

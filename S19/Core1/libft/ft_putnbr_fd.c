@@ -14,19 +14,19 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long	b;
+	long	nb;
 
-	b = n;
-	if (b < 0)
+	nb = n;
+	if (nb < 0)
 	{
 		ft_putchar_fd('-', fd);
-		b = b * -1;
+		nb = -nb;
 	}
-	if (b > 9)
+	if (nb >= 9)
 	{
-		ft_putnbr_fd(b / 10, fd);
-		ft_putnbr_fd(b % 10, fd);
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putchar_fd(nb % 10 + '0', fd);
 	}
 	else
-		ft_putchar_fd(b + '0', fd);
+		ft_putchar_fd(nb + '0', fd);
 }
