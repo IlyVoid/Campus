@@ -15,30 +15,21 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	len;
-	int		start;
-	int		end;
-	char	*newstr;
+	size_t	start;
+	size_t	end;
+	char	*str;
 
-	start = 0;
 	if (!s1 || !set)
 		return (NULL);
-	end = ft_strlen(s1) - 1;
+	start = 0;
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
-	while (end > start && ft_strchr(set, s1[end]))
+	end = ft_strlen(s1);
+	while (end > start && ft_strchr(set, s1[end - 1]))
 		end--;
-	len = end - start + 1;
-	newstr = (char *)malloc(sizeof(char) * (len + 1));
-	if (!newstr)
+	str = (char *)malloc(sizeof(char) * (end - start + 1));
+	if (!str)
 		return (NULL);
-	ft_strlcpy(newstr, s1 + start, len + 1);
-	return (newstr);
+	ft_strlcpy(str, s1 + start, end - start + 1);
+	return (str);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	printf("%s", ft_strtrim(NULL, NULL));
-}
-*/
