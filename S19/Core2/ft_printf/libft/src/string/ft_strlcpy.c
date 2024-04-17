@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:09:28 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/03 10:39:53 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/17 10:11:19 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 		dest[i] = src[i];
 		i++;
 	}
-	if (i < size)
-		dest[i] = '\0';
-	while (src[i])
-		i++;
-	return (i);
+	dest[i] = '\0';
+	return (ft_strlen(src));
 }

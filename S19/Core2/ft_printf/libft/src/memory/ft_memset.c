@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:03:45 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/03 11:34:14 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/15 11:34:52 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,10 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	char	*holder;
+	unsigned char	*ptr;
 
-	holder = (char *)b;
-	while (len > 0)
-	{
-		holder[len - 1] = c;
-		len--;
-	}
+	ptr = (unsigned char *)b;
+	while (len--)
+		*ptr++ = (unsigned char)c;
 	return (b);
 }
