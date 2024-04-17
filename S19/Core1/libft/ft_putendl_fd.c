@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:04:38 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/03 10:04:40 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/17 09:58:45 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (!s)
-		return ;
-	ft_putchar_fd(s, fd);
-	write(fd, "\n", 1);
+	ft_putstr_fd((char *)s, fd);
+	ft_putchar_fd('\n', fd);
 }

@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:13:35 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/03 10:13:36 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/17 10:07:12 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,26 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
-	size_t	i;
+	size_t	count;
+	size_t	size;
+	char	*tab;
 
 	if (!s)
 		return (NULL);
-	if (ft_strlen(s) < start)
+	if ((unsigned int)ft_strlen(s) < start)
 		return (ft_strdup(""));
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
+	size = ft_strlen(s + start);
+	if (size < len)
+		len = size;
+	tab = (char *)malloc((len + 1) * sizeof(char));
+	if (!tab)
 		return (NULL);
-	i = 0;
-	while (s[start] != '\0' && i < len)
+	count = 0;
+	while (count < len)
 	{
-		str[i] = s[start];
-		i++;
-		start++;
+		tab[count] = s[start + count];
+		count++;
 	}
-	str[i] = '\0';
-	return (str);
+	tab[count] = '\0';
+	return (tab);
 }

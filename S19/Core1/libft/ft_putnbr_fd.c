@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:25:20 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/03 11:45:03 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/17 10:00:24 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long	nb;
+	long	b;
 
-	nb = n;
-	if (nb < 0)
+	b = n;
+	if (b < 0)
 	{
 		ft_putchar_fd('-', fd);
-		nb = -nb;
+		b = b * -1;
 	}
-	if (nb >= 9)
+	if (b > 9)
 	{
-		ft_putnbr_fd(nb / 10, fd);
-		ft_putchar_fd(nb % 10 + '0', fd);
+		ft_putnbr_fd(b / 10, fd);
+		ft_putnbr_fd(b % 10, fd);
 	}
 	else
-		ft_putchar_fd(nb + '0', fd);
+		ft_putchar_fd(b + '0', fd);
 }

@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:02:42 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/08 19:17:06 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/17 09:36:16 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		ptr2++;
 		n--;
 	}
-	return ((int)(*ptr1 - *ptr2);
+	return ((int)(*ptr1 - *ptr2));
 }

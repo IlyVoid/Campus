@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 09:58:20 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/12 13:19:06 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/17 10:00:50 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ char	*ft_itoa(int n)
 	int		sign;
 	char	*str;
 
-	if (!n)
-		return (NULL);
 	ft_len(n, &len, &sign);
 	str = (char *)malloc(sizeof(char) * (len + 2));
 	if (!str)

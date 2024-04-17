@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:19:57 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/03 11:19:59 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/17 09:42:34 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int i;
+	int	i;
 
 	if (!s || !f)
 		return ;

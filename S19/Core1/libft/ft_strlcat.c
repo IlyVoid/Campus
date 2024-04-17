@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:09:01 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/03 11:38:39 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/17 09:43:24 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 
 	dest_len = ft_strlen(dest);
 	src_len = ft_strlen(src);
-	if (!dst && size == 0)
+	if (!dest && size == 0)
 		return (src_len);
 	if (size <= dest_len)
 		return (size + src_len);
