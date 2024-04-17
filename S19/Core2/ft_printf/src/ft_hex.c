@@ -14,9 +14,11 @@
 
 void	ft_puthex_printf(unsigned int n, size_t *counter, char *base)
 {
-	char	*str;
-
-	str = ft_outputhex_printf(n, base);
-	ft_putstr_printf(str, counter);
-	free(str);
+	if (n >= 16)
+	{
+		ft_puthex_printf(n / 16, counter, base);
+		ft_putchar_printf(base[n % 16], counter);
+	}
+	else
+		ft_putchar_printf(base[n], counter);
 }

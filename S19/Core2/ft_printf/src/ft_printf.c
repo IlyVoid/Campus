@@ -14,15 +14,11 @@
 
 void	ft_formatter(va_list va, char *str, size_t *counter)
 {
-	if (*str == '0')
-		return (NULL);
-	else if (*str == 'c')
+	if (*str == 'c')
 		ft_putchar_printf(va_arg(va, int), counter);
 	else if (*str == 's')
 		ft_putstr_printf(va_arg(va, char *), counter);
-	else if (*str == 'p')
-		ft_putptr_printf(va_arg(va, void *), counter);
-	else if (*str == 'i' || *str == 'd')
+	else if (*str == 'd' || *str == 'i')
 		ft_putnbr_printf(va_arg(va, int), counter);
 	else if (*str == 'u')
 		ft_putuint_printf(va_arg(va, unsigned int), counter);
@@ -30,8 +26,10 @@ void	ft_formatter(va_list va, char *str, size_t *counter)
 		ft_puthex_printf(va_arg(va, unsigned int), counter, HEX_LOW_BASE);
 	else if (*str == 'X')
 		ft_puthex_printf(va_arg(va, unsigned int), counter, HEX_UPP_BASE);
+	else if (*str == 'p')
+		ft_putptr_printf(va_arg(va, void *), counter);
 	else if (*str == '%')
-		ft_putchar_printf(*str, counter);
+		ft_putchar_printf('%', counter);
 }
 
 int	ft_printf(const char *str, ...)
@@ -39,10 +37,8 @@ int	ft_printf(const char *str, ...)
 	va_list	va;
 	size_t	counter;
 
-	if (!str)
-		return (0);
-	counter = 0;
 	va_start(va, str);
+	counter = 0;
 	while (*str)
 	{
 		if (*str == '%')
