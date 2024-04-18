@@ -14,7 +14,9 @@
 
 void	ft_formatter(va_list va, char *str, size_t *counter)
 {
-	if (*str == 'c')
+	if ( *str == NULL)
+		return ;
+	else if (*str == 'c')
 		ft_putchar_printf(va_arg(va, int), counter);
 	else if (*str == 's')
 		ft_putstr_printf(va_arg(va, char *), counter);
