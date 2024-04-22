@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:57:16 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/22 14:52:11 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:49:34 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,13 @@ void	ft_putptr_printf(void *ptr, size_t *counter)
 {
 	char	*str;
 
-	
-	if (!str)
-		ft_putstr_printf("(NIL)", counter);
+	if (!ptr)
+		return (ft_putstr_printf("(nil)", counter));
 	else
 	{
 		ft_putstr_printf("0x", counter);
 		str = ft_outputhex_printf((unsigned long long)ptr, HEX_LOW_BASE);
 		ft_putstr_printf(str, counter);
-	}	
-	free(str);
+		free(str);
+	}
 }
