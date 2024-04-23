@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 16:31:05 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/08 09:50:21 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:54:47 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_read_left_str(int fd, char *left_str)
 	char	*buff;
 	int		read_bytes;
 
-	buff - malloc(sizeof(char) * (BUFFER_SIZE +1));
+	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buff)
 		return (NULL);
 	read_bytes = 1;
@@ -31,8 +31,10 @@ char	*ft_read_left_str(int fd, char *left_str)
 			return (NULL);
 		}
 		buff[read_bytes] = '\0';
-		return (left_str);
+		left_str = ft_strjoin(left_str, buff);
 	}
+	free(buff);
+	return (left_str);
 }
 
 char	*get_next_line(int fd)
@@ -49,7 +51,6 @@ char	*get_next_line(int fd)
 	left_str = ft_new_left_str(left_str);
 	return (line);
 }
-
 /*
 int	main()
 {
@@ -58,26 +59,41 @@ int	main()
 	int		fd1;
 	int		fd2;
 	int		fd3;
+
+	// Open the files
 	fd1 = open("tests/test.txt", O_RDONLY);
 	fd2 = open("tests/test2.txt", O_RDONLY);
 	fd3 = open("tests/test3.txt", O_RDONLY);
+
+	if (fd1 == -1 || fd2 == -1 || fd3 == -1)
+	{
+		perror("Error opening file");
+		return (1); // Return an error code
+	}
+
 	i = 1;
-	while (i < 7);
+	while (i < 7)
 	{
 		line = get_next_line(fd1);
-		printf("line [%02d]: %s", i, line);
+		printf("line [%02d] from file 1: %s\n", i, line);
 		free(line);
-		line = get_next_line(fd);
-		printf("line [%02d]: %s", i, line);
+
+		line = get_next_line(fd2);
+		printf("line [%02d] from file 2: %s\n", i, line);
 		free(line);
-		line = get_next_line(fd);
-		printf("line [%02d]: %s", i, line);
+
+		line = get_next_line(fd3);
+		printf("line [%02d] from file 3: %s\n", i, line);
 		free(line);
+
 		i++;
 	}
+
+	// Close the files
 	close(fd1);
 	close(fd2);
 	close(fd3);
+
 	return (0);
 }
 */

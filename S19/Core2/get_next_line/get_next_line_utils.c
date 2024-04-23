@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 10:58:29 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/06 19:22:24 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:12:33 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strchr(char *s, int c)
 	while (s[i])
 	{
 		if (s[i] == (char)c)
-			return ((chat *)&s[i]);
+			return ((char *)&s[i]);
 		i++;
 	}
 	return (NULL);
@@ -53,7 +53,7 @@ char	*ft_strjoin(char *left_str, char *buff)
 		left_str = (char *)malloc(1 * sizeof(char));
 		left_str[0] = '\0';
 	}
-	if (!str_left || !buff)
+	if (!left_str || !buff)
 		return (NULL);
 	str = malloc(sizeof(char) * ((ft_strlen(left_str) + ft_strlen(buff)) + 1));
 	if (str == NULL)
@@ -80,10 +80,11 @@ char	*ft_fetch_line(char *left_str)
 		return (NULL);
 	while (left_str[i] && left_str[i] != '\n')
 		i++;
+	str = (char *)malloc(i + 2);
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (left_str[i] && left_str != '\n')
+	while (left_str[i] && left_str[i] != '\n')
 	{
 		str[i] = left_str[i];
 		i++;

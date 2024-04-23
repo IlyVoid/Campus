@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 20:48:19 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/06 20:56:40 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:59:25 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_read_left_str(int fd, char *left_str);
 char	*ft_strchr(char *s, int c);
 size_t	ft_strlen(char *s);
 char	*ft_strjoin(char *left_str, char *buff);
-char	ft_fetch_line(char *left_str);
+char	*ft_fetch_line(char *left_str);
 char	*ft_new_left_str(char *left_str);
 
 #endif
