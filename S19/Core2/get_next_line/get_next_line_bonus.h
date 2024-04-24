@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 20:48:19 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/23 13:59:25 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:25:15 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
-#  define BUFER_SIZE 1000
+#  define BUFFER_SIZE 1000
 # endif
 
 # include <stdlib.h>
