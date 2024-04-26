@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/06 19:36:25 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/23 15:27:17 by quvan-de         ###   ########.fr       */
+/*   Created: 2024/04/26 12:55:50 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/04/26 12:56:34 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*ft_read_left_str(int fd, char *left_str)
 		if (read_bytes == -1)
 		{
 			free(buff);
+			free(left_str);
 			return (NULL);
 		}
 		buff[read_bytes] = '\0';

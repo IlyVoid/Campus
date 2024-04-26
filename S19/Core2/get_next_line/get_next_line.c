@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 16:31:05 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/23 13:54:47 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/04/26 17:01:58 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*ft_read_left_str(int fd, char *left_str)
 		if (read_bytes == -1)
 		{
 			free(buff);
+			free(left_str);
 			return (NULL);
 		}
 		buff[read_bytes] = '\0';
@@ -57,15 +58,11 @@ int	main()
 	char	*line;
 	int		i;
 	int		fd1;
-	int		fd2;
-	int		fd3;
 
 	// Open the files
-	fd1 = open("tests/test.txt", O_RDONLY);
-	fd2 = open("tests/test2.txt", O_RDONLY);
-	fd3 = open("tests/test3.txt", O_RDONLY);
+	fd1 = open("tests/no_new_line.txt", O_RDONLY);
 
-	if (fd1 == -1 || fd2 == -1 || fd3 == -1)
+	if (fd1 == -1)
 	{
 		perror("Error opening file");
 		return (1); // Return an error code
@@ -77,23 +74,13 @@ int	main()
 		line = get_next_line(fd1);
 		printf("line [%02d] from file 1: %s\n", i, line);
 		free(line);
-
-		line = get_next_line(fd2);
-		printf("line [%02d] from file 2: %s\n", i, line);
-		free(line);
-
-		line = get_next_line(fd3);
-		printf("line [%02d] from file 3: %s\n", i, line);
-		free(line);
-
 		i++;
 	}
 
 	// Close the files
 	close(fd1);
-	close(fd2);
-	close(fd3);
 
 	return (0);
+
 }
 */
