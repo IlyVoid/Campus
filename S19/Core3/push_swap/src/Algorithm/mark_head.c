@@ -40,7 +40,7 @@ static void find_mark_head(t_stack *a)
     while (tmp)
     {
         tmp_keep_a = kept_nodes(a, tmp->value, false);
-        if (tmp_leep_a > keep_a)
+        if (tmp_keep_a > keep_a)
         {
             a->mark_head = tmp->value;
             keep_a = tmp_keep_a;
