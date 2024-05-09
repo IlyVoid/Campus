@@ -5,7 +5,7 @@ void    align_a(t_stack *stacks)
     int     min;
     size_t  i;
     t_node  *tmp;
-    char    *direction;
+    char    *instruct;
 
     i = 0;
     tmp = stacks->a.head;
@@ -16,9 +16,9 @@ void    align_a(t_stack *stacks)
         i++;
     }
     if (i <= stacks->a.size / 2)
-        direction = "ra";
+        instruct = "ra";
     else
-        direction = "rra";
+        instruct = "rra";
     while (stacks->a.head->value != min)
-        call_instruction(stacks, direction);
+        call_instruction(stacks, instruct);
 }
