@@ -7,19 +7,19 @@
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
 
-typedef struct s_node
+typedef struct s_info
 {
     char        instruct[4];
     bool        top;
     int         n_instruct;
     int         index;
     int         size;
-}               t_node;
+}               t_info;
 
 typedef struct s_actions
 {
-    t_node      a;
-    t_node      b;
+    t_info      a;
+    t_info      b;
     int         total;
     char        instruct_same[4];
     int         n_instruct_same;
