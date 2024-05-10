@@ -2,7 +2,7 @@
 
 bool	push(t_stack *to, t_stack *from)
 {
-	t_node	move;
+	t_node	*move;
 
 	if (from->size < 1 || !from->head)
 		return (true);
