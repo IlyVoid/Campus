@@ -1,5 +1,9 @@
 #include "push_swap.h"
 
+/* according to the info stored in the struct, assign the operations
+if both nodes are in the same half, optimize the operations (rr or rrr)
+and recalculate op in each stack */
+
 void    attribute_instruction(t_actions *def)
 {
     if (!(def->a.top ^ def->b.top))
@@ -23,6 +27,8 @@ void    attribute_instruction(t_actions *def)
     else
         ft_memmove((char *)&def->b.instruct, "rrb", 4);
 }
+
+/* call the operations according to best perform stored in def */
 
 void    instruction_act(_stacks *stacks, t_actions *def)
 {

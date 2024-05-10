@@ -1,5 +1,8 @@
 #include "push_swap.h"
 
+/* call the necessary operation to make sure that the first node is the smallest
+if the minimum value is in the top bottom, operate 'ra', else operate 'rra' */
+
 void    align_a(t_stack *stacks)
 {
     int     min;
