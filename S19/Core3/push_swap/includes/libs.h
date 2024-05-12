@@ -2,7 +2,7 @@
 # define LIBS_H
 
 # include <stdbol.h>
-# include "../libftplus/include/libft.h"
+# include "../../../Core2/printf/include/libft.h"
 
 typedef struct s_node
 {
