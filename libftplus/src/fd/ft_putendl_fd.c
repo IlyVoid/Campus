@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../S19/Core2/printf/include/libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../S19/Core2/printf/include/libft.h"
 #include <stdlib.h>
 
 t_list	*ft_lstnew(void *content)

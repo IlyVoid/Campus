@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../S19/Core2/printf/include/libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

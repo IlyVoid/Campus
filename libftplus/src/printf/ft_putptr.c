@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "libft.h"
+#include "../../../S19/Core2/printf/include/ft_printf.h"
+#include "../../../S19/Core2/printf/include/libft.h"
 
 size_t	ft_len(unsigned long long n, char *base)
 {

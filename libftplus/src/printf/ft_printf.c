@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../../S19/Core2/printf/include/ft_printf.h"
 
 void	ft_formatter(va_list va, char *str, size_t *counter)
 {
