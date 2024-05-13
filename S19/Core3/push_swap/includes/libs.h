@@ -33,7 +33,7 @@ char			**unite_args(int argc, char **argv);
 void			val_args(int argc, char **argv);
 bool			val_params(char **argv);
 void			stacks_builder(char **argv, t_stacks *stacks);
-bool			instructions(char *op, t_stack *stacks);
+bool			instructions(char *instruct, t_stack *stacks);
 bool			is_sorted(t_stacks *stacks);
 void			stacks_clear(t_stacks *stacks);
 void			prog_exit(t_stacks *stacks);
