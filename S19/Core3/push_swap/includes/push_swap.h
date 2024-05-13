@@ -26,9 +26,9 @@ typedef struct s_actions
 }               t_actions;
 
 /* SORTING ALGORITHM */
-void    sort_lst_2(t_stack *stacks);
-void    sort_lst_3(t_stack *stacks);
-void    sort_lst_5(t_stack *stacks);
+void    sort_lst_2(t_stacks *stacks);
+void    sort_lst_3(t_stacks *stacks);
+void    sort_lst_5(t_stacks *stacks);
 
 /* SORTING ALGORITHM UTIL */
 void    mark_head(t_stack *a);
