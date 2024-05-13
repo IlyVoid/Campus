@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
 /*#include <stdio.h>*/
 
 char	*ft_read_left_str(int fd, char *left_str)

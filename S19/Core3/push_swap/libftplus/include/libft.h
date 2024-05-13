@@ -64,6 +64,7 @@ void				ft_putnbr_fd(int n, int fd);
 void				ft_putendl_fd(char *s, int fd);
 int                 ft_strcmp(const char *s1, const char *s2);
 char                *ft_strjoin_free(char *s1, char *s2);
+void                ft_clear_array(char **array);
 
 /* BONUS */
 t_list				*ft_lstnew(void *content);

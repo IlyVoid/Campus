@@ -36,7 +36,8 @@ FTIS_DIR   	= checks/
 FTIS       	= ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint
 
 FTMEM_DIR  	= memory/
-FTMEM      	= ft_bzero ft_calloc ft_memchr ft_memcmp ft_memmove ft_memset
+FTMEM      	= ft_bzero ft_calloc ft_memchr ft_memcmp ft_memmove ft_memset \
+			 ft_clear_array
 
 FTPUT_DIR  	= fd/
 FTPUT      	= ft_putchar_fd ft_putendl_fd ft_putnbr_fd ft_putstr_fd
@@ -47,7 +48,8 @@ FTTO       	= ft_atoi ft_itoa ft_tolower ft_toupper
 FTSTR_DIR  	= string/
 FTSTR      	= ft_split ft_strchr ft_strdup ft_striteri ft_strjoin \
              ft_strlcat ft_strlcpy ft_strlen ft_strmapi ft_strncmp \
-             ft_strnstr ft_strrchr ft_strtrim ft_substr
+             ft_strnstr ft_strrchr ft_strtrim ft_substr ft_strcmp	\
+             ft_strjoin_free
 
 FTLST_DIR  	= lists/
 FTLST      	= ft_lstadd_back ft_lstadd_front ft_lstclear ft_lstdelone \
@@ -57,7 +59,7 @@ FTPRINT_DIR = printf/
 FTPRINT     = ft_hex ft_letters ft_nbrs ft_printf ft_putptr
 
 FTNEXT_DIR  = next_line/
-FTNEXT      = get_next_line_bonus get_next_line_utils_bonus
+FTNEXT      = get_next_line get_next_line_utils
 
 SRC_FILES += $(addprefix $(FTIS_DIR),$(FTIS))
 SRC_FILES += $(addprefix $(FTMEM_DIR),$(FTMEM))

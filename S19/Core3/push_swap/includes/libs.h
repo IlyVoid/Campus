@@ -1,8 +1,10 @@
 #ifndef LIBS_H
 # define LIBS_H
 
-# include <stdbol.h>
-# include "../../../Core2/printf/include/libft.h"
+# include <stdbool.h>
+# include "../libftplus/include/libft.h"
+# include "../libftplus/include/ft_printf.h"
+# include "../libftplus/include/get_next_line.h"
 
 typedef struct s_node
 {

@@ -64,7 +64,7 @@ void    push_min_max_value_to_b(t_stacks *stacks, int min, int max)
     while (i < size)
     {
         head = stacks->a.head;
-        last = last_node(stacks->a.head);
+        last = last_node(&stacks->a.head);
         if (head->value == min || head->value == max)
             call_instruction(stacks, "pb");
         else if (last->value == min || last->value == max)
