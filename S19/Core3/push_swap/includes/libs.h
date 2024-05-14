@@ -41,8 +41,8 @@ void			stacks_clear(t_stacks *stacks);
 void			prog_exit(t_stacks *stacks);
 void			stacks_print(t_stacks *stacks);
 t_node			*new_node(int value);
-void			add_back_node(t_node **lst, t_node *new);
-void			add_front_node(t_node **lst, t_node *new);
+void			add_back_node(t_node **lst, t_node *new_n);
+void			add_front_node(t_node **lst, t_node *new_n);
 t_node			last_node(t_node **lst);
 
 #endif
