@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 /* optimizes op numb according to the position of the node in stack
 store info in the struct to use when assigning the operations */

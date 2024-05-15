@@ -1,12 +1,12 @@
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 /* attribute node values in the array of ints */
-void    attribute_values(t_node *node, int *tab, int size)
+void    attribute_values(t_node *node, int *tab, size_t size)
 {
-    int i;
+    size_t i;
 
     i = 0;
-    while (node)
+    while (node && i < size)
     {
         tab[i] = node->value;
         node = node->next;

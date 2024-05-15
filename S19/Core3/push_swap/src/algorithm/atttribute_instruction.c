@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 /* according to the info stored in the struct, assign the operations
 if both nodes are in the same half, optimize the operations (rr or rrr)

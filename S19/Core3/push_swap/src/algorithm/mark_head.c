@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 /* starting from the mark head, a node is going to be kept in the stack A
 if its index is bigger than the previous one.
@@ -42,7 +42,6 @@ static void find_mark_head(t_stack *a)
     int     tmp_keep_a;
 
     keep_a = 0;
-    tmp_keep_a = 0;
     tmp = a->head;
     while (tmp)
     {
@@ -62,7 +61,7 @@ then tag the nodes according to the best performing mark head */
 
 void    mark_head(t_stack *a)
 {
-    int     keep_a;
+    int     *keep_a;
 
     find_mark_head(a);
     keep_a = kept_nodes(a, a->mark_head, true);

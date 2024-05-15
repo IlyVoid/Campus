@@ -1,11 +1,11 @@
-#include "libs.h"
+#include "../../includes/libs.h"
 
 bool	rot(t_stack *stack)
 {
 	t_node	*move;
 
 	if (stack->size < 2 || !stack->head)
-		return (true);
+		return (false);
 	move = stack->head;
 	stack->head = stack->head->next;
 	move->next = NULL;
