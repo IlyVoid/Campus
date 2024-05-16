@@ -2,7 +2,7 @@
 
 /* according to the info stored in the struct, assign the operations
 if both nodes are in the same half, optimize the operations (rr or rrr)
-and recalculate op in each stack */
+and recalculate instruct in each stack */
 
 void    attribute_instruction(t_actions *def)
 {
@@ -30,7 +30,7 @@ void    attribute_instruction(t_actions *def)
 
 /* call the operations according to best perform stored in def */
 
-void    instruction_act(_stacks *stacks, t_actions *def)
+void    instruction_act(t_stacks *stacks, t_actions *def)
 {
     while (def->n_instruct_same--)
         call_instruction(stacks, def->instruct.same);

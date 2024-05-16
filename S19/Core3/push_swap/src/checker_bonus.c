@@ -1,4 +1,4 @@
-#include "libs.h"
+#include "../include/libs.h"
 
 static void read_execute_cmds(t_stacks *stacks, bool verbose)
 {
