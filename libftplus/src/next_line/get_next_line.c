@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../S19/Core3/push_swap/libftplus/include/get_next_line.h"
+#include "../../include/get_next_line.h"
 /*#include <stdio.h>*/
 
 char	*ft_read_left_str(int fd, char *left_str)

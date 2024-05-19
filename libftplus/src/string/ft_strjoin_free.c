@@ -1,4 +1,4 @@
-#include "../../../S19/Core2/printf/include/libft.h"
+#include "../../include/libft.h"
 
 char	*ft_strjoin_free(char *s1, char *s2)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../S19/Core3/push_swap/libftplus/include/get_next_line.h"
+#include "../../include/get_next_line.h"
 
 size_t	ft_strlen(char *s)
 {

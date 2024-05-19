@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../S19/Core2/printf/include/libft.h"
+#include "../../include/libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {

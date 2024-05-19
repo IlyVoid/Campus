@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../S19/Core2/printf/include/libft.h"
+#include "../../include/libft.h"
 
 int	ft_isprint(int i)
 {

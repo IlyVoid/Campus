@@ -1,4 +1,4 @@
-#include "../../../S19/Core2/printf/include/libft.h"
+#include "../../include/libft.h"
 
 void	ft_clear_array(char **array)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../S19/Core2/printf/include/libft.h"
+#include "../../include/libft.h"
 #include <stdlib.h>
 
 static void	ft_len(int n, size_t *len, int *sign)
