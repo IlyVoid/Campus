@@ -1,56 +1,50 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../../libft/include/libft.h"
+# include "../../libftplus/include/libft.h"
 # include <limits.h>
 
-typedef struct s_stack
+typedef struct s_push
 {
-    struct s_stack  *next;
-    struct s_stack  *prev;
-    int             value;
-}               t_stack;
+    int	next;
+    int	max;
+    int	mid;
+    int	flag;
+}	t_push;
 
-# define PA "pa\n"
-# define PB "pb\n"
+typedef struct s_swap
+{
+    t_list	*stack_a;
+    t_list	*stack_b;
+    int		a_size;
+    int		b_size;
+}		t_swap;
 
-# define RA "ra\n"
-# define RB "rb\n"
-# define RR "rr\n"
+/* Sorting */
+void	check_sort(t_swap	*tab);
+int		check_sorting(t_list **stack_a);
+int		check_sorting_a(t_list **stack_a, int count);
+t_list	*find_min_lst(t_list **stack);
+t_list	*find_max_lst(t_list **stack);
+int		is_rev_sorted(t_swap	*tab);
 
-# define RRA "rra\n"
-# define RRB "rrb\n"
-# define RRR "rrr\n"
+/* Instructions **/
+void	pa(t_list **stack_a, t_list **stack_b);
+void	pb(t_list **stack_a, t_list **stack_b);
+void	ra(t_list **stack_a);
+void	rb(t_list **stack_b);
+void	rr(t_list **stack_a, t_list **stack_b);
+void	sa(t_list **stack_a);
+void	sb(t_list **stack_b);
+void	ss(t_list **stack_a, t_list **stack_b);
+void	rrb(t_list **stack_b);
+void	rra(t_list **stack_a);
+void    rrr(t_list **stack_a, t_list **stack_b);
 
-# define SA "sa\n"
-# define SB "sb\n"
-# define SS "ss\n"
+/* Indexing */
+void	add_index(t_list *lst);
 
-# define SYNTAX "Error\n"
-# define DUPLICATE "Error\n"
-# define OVERFLOW "Error\n"
-
-void    stack_init(t_stack **a, char **argv, int argc, int flag_argc_2);
-long    *normalize(long *arr, int size);
-long    find_bigger(long *arr, int size);
-void    user_message(char *string);
-void    radix_sort(t_stack **a, t_stack **b, int size);
-void    instructions(t_stack **a, t_stack **b, int size);
-int		get_bit(int bit_index, int n);
-t_stack *find_last_node(t_stack *top);
-int		append_node(t_stack **head, int nbr);
-int		stack_len(t_stack *stack);
-int		stack_sorted(t_stack *stack);
-void	free_matrix(char **argv);
-void	free_stack(t_stack **stack);
-void	error_free(t_stack **a, char **argv, int flag_argc_2, long *numbers);
-int		error_syntax(char *str_nbr);
-int		error_repetition(long *stack, int size);
-void	sort_three(t_stack **a);
-void	sort_five(t_stack **a, t_stack **b);
-void	push(t_stack **dest, t_stack **source, char *string);
-void	rotate(t_stack **head, t_stack **temp, char *string);
-void	reverse_rotate(t_stack **head, t_stack **temp, char *string);
-void	swap(t_stack **head, int flag, char *string);
+/* Quick sort */
+void	quick_sort(t_list **stack_a, t_list **stack_b, int count);
 
 #endif
