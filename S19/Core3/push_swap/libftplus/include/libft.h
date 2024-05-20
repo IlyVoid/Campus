@@ -6,13 +6,15 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:14:59 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/05/09 15:52:07 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:27:09 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "printf.h"
+# include "get_next_line.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
@@ -67,10 +69,10 @@ void                ft_clear_array(char **array);
 
 /* BONUS */
 t_list				*ft_lstnew(void *content);
-void				ft_lstadd_front(t_list **lst, t_list *new);
+void				ft_lstadd_front(t_list **lst, t_list *n_new);
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
-void				ft_lstadd_back(t_list **lst, t_list *new);
+void				ft_lstadd_back(t_list **lst, t_list *n_new);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));

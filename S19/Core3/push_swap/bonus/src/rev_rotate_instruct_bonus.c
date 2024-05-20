@@ -1,4 +1,4 @@
-#include "../include/push_swap.h"
+#include "../include/checker.h"
 
 static void ft_rr(t_list **stack)
 {
@@ -19,11 +19,9 @@ static void ft_rr(t_list **stack)
 void    rra(t_list **stack_a)
 {
     ft_rr(stack_a);
-    write(1, "rra\n", 4);
 }
 
 void    rrb(t_list **stack_b)
 {
     ft_rr(stack_b);
-    write(1, "rrb\n", 4);
 }

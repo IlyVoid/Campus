@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 12:55:50 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/26 12:56:34 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:32:09 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_read_left_str(int fd, char *left_str)
 	if (!buff)
 		return (NULL);
 	read_bytes = 1;
-	while (!ft_strchr(left_str, '\n') && read_bytes != 0)
+	while (!ft_schr(left_str, '\n') && read_bytes != 0)
 	{
 		read_bytes = read(fd, buff, BUFFER_SIZE);
 		if (read_bytes == -1)
@@ -32,7 +32,7 @@ char	*ft_read_left_str(int fd, char *left_str)
 			return (NULL);
 		}
 		buff[read_bytes] = '\0';
-		left_str = ft_strjoin(left_str, buff);
+		left_str = ft_sjoin(left_str, buff);
 	}
 	free(buff);
 	return (left_str);

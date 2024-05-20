@@ -39,7 +39,6 @@ void	sb(t_list **stack_b);
 void	ss(t_list **stack_a, t_list **stack_b);
 void	rrb(t_list **stack_b);
 void	rra(t_list **stack_a);
-void    rrr(t_list **stack_a, t_list **stack_b);
 
 /* Indexing */
 void	add_index(t_list *lst);

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 20:57:06 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/04/08 09:29:33 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:31:59 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/get_next_line.h"
 
-size_t	ft_strlen(char *s)
+size_t	ft_slen(char *s)
 {
 	size_t	i;
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(char *s)
 	return (i);
 }
 
-char	*ft_strchr(char *s, int c)
+char	*ft_schr(char *s, int c)
 {
 	int	i;
 
@@ -32,7 +32,7 @@ char	*ft_strchr(char *s, int c)
 	if (!s)
 		return (0);
 	if (c == '\0')
-		return ((char *)&s[ft_strlen(s)]);
+		return ((char *)&s[ft_slen(s)]);
 	while (s[i])
 	{
 		if (s[i] == (char)c)
@@ -42,7 +42,7 @@ char	*ft_strchr(char *s, int c)
 	return (0);
 }
 
-char	*ft_strjoin(char *left_str, char *buff)
+char	*ft_sjoin(char *left_str, char *buff)
 {
 	size_t	i;
 	size_t	j;
@@ -55,7 +55,7 @@ char	*ft_strjoin(char *left_str, char *buff)
 	}
 	if (!left_str || !buff)
 		return (NULL);
-	str = malloc(sizeof(char) * ((ft_strlen(left_str) + ft_strlen(buff)) + 1));
+	str = malloc(sizeof(char) * ((ft_slen(left_str) + ft_slen(buff)) + 1));
 	if (str == NULL)
 		return (NULL);
 	i = -1;
@@ -65,7 +65,7 @@ char	*ft_strjoin(char *left_str, char *buff)
 			str[i] = left_str[i];
 	while (buff[j])
 		str[i++] = buff[j++];
-	str[ft_strlen(left_str) + ft_strlen(buff)] = '\0';
+	str[ft_slen(left_str) + ft_slen(buff)] = '\0';
 	free(left_str);
 	return (str);
 }
@@ -112,7 +112,7 @@ char	*ft_new_left_str(char *left_str)
 		free(left_str);
 		return (NULL);
 	}
-	str = (char *)malloc(sizeof(char) * (ft_strlen(left_str) - i + 1));
+	str = (char *)malloc(sizeof(char) * (ft_slen(left_str) - i + 1));
 	if (!str)
 		return (NULL);
 	i++;

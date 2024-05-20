@@ -55,7 +55,7 @@ t_list  *find_max_lst(t_list **stack)
             max = tmp;
         tmp = tmp->next;
     }
-    return (max):
+    return (max);
 }
 
 int is_rev_sorted(t_swap *tab)

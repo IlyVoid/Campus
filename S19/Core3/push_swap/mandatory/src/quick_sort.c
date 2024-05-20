@@ -22,7 +22,7 @@ void    begin_sorting(t_list **stack_a, t_list **stack_b, t_push *push, int coun
     push->flag++;
 }
 
-void    find_next(t_list **Stack_a, t_list **stack_b, t_push *push)
+void    find_next(t_list **stack_a, t_list **stack_b, t_push *push)
 {
     if (ft_lstsize(*stack_b) > 0 && ((*stack_b)->index == push->next))
         pa(stack_a, stack_b);
@@ -32,7 +32,7 @@ void    find_next(t_list **Stack_a, t_list **stack_b, t_push *push)
         ra(stack_a);
         push->next++;
     }
-    else if ((ft_lstsize(*stack_b)) > 2 && ft_lstlast(*stack_b)->index == push->next))
+    else if ((ft_lstsize(*stack_b)) > 2 && ft_lstlast(*stack_b)->index == push->next)
         rrb(stack_b);
     else if ((*stack_a)->next->index == push->next)
         sa(stack_a);
@@ -54,7 +54,7 @@ void    quick_a(t_list **stack_a, t_list **stack_b, t_push *push)
     while (ft_lstsize(*stack_b) && ++i < count_b)
     {
         if ((*stack_b)->index == push->next)
-            find_next(stack_s, stack_b, push);
+            find_next(stack_a, stack_b, push);
         else if ((*stack_b)->flag >= push->mid)
         {
             (*stack_b)->flag = push->flag;
@@ -64,7 +64,7 @@ void    quick_a(t_list **stack_a, t_list **stack_b, t_push *push)
             rb(stack_b);
     }
     push->max = push->mid;
-    push->mid = (push->max - push->next) / 2 + push->next;]
+    push->mid = (push->max - push->next) / 2 + push->next;
     push->flag++;
 }
 
@@ -87,7 +87,7 @@ void    quick_b(t_list **stack_a, t_list **stack_b, t_push *push)
         while ((*stack_a)->flag != -1)
         {
             if ((*stack_a)->index != push->next)
-                pb(stack_s, stack_b);
+                pb(stack_a, stack_b);
             find_next(stack_a, stack_b, push);
         }
     }
