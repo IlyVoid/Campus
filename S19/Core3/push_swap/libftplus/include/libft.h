@@ -22,7 +22,7 @@
 
 typedef struct s_list
 {
-    long int        content;
+    void      *content;
 	int             flag;
     int             index;
 	struct s_list	*next;

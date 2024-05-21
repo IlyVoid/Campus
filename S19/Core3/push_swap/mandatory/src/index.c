@@ -7,7 +7,7 @@ void    index_replace(t_list *lst, int n, int to)
     tmp = lst;
     while (tmp)
     {
-        if (tmp->index == -1 && tmp->content == n)
+        if (tmp->index == -1 && (long)tmp->content == n)
             break ;
         tmp = tmp->next;
     }
@@ -23,8 +23,8 @@ int min_nbr(t_list *lst)
     tmp = lst;
     while (tmp)
     {
-        if (tmp->index == -1 && tmp->content < min)
-            min = tmp->content;
+        if (tmp->index == -1 && (long)tmp->content < min)
+            min = (long)tmp->content;
         tmp = tmp->next;
     }
     return (min);

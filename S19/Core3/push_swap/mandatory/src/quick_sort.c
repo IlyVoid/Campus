@@ -60,7 +60,7 @@ void    quick_a(t_list **stack_a, t_list **stack_b, t_push *push)
             (*stack_b)->flag = push->flag;
             pa(stack_a, stack_b);
         }
-        else if ((*stack_b)-> < push->mid)
+        else if ((*stack_b)->index < push->mid)
             rb(stack_b);
     }
     push->max = push->mid;
