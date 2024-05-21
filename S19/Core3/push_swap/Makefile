@@ -1,7 +1,7 @@
 #Variables
 
-NAME_MAN			= push_swap.a
-NAME_BON			= checker.a
+NAME_MAN			= push_swap
+NAME_BON			= checker
 INCLUDE_MAN			= mandatory/include
 INCLUDE_BON			= bonus/include
 LIBFT				= libftplus
