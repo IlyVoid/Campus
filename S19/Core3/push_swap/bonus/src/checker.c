@@ -46,7 +46,7 @@ int	ft_check(t_list *lst, int n, char *nbr)
 	}
 	while (tmp)
 	{
-		if (tmp->content == n)
+		if ((long)tmp->content == n)
 			return (0);
 		tmp = tmp->next;
 	}

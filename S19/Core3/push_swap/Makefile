@@ -1,17 +1,17 @@
-#Variables
+# Variables
 
 NAME_MAN			= push_swap
 NAME_BON			= checker
-INCLUDE_MAN			= mandatory/include
-INCLUDE_BON			= bonus/include
+INCLUDE_MAN			= -I mandatory/include
+INCLUDE_BON			= -I bonus/include
 LIBFT				= libftplus
 SRC_DIR_MAN			= mandatory/src/
 SRC_DIR_BON			= bonus/src/
 OBJ_DIR_MAN			= mandatory/obj/
 OBJ_DIR_BON			= bonus/obj
-CC					= gcc
-CFLAGS				= -Wall -Werror -Wextra -I
-RM					= rm -f
+CC					= cc
+CFLAGS				= -Wall -Werror -Wextra -g
+RM					= rm -rf
 AR					= ar rcs
 
 # Colors
@@ -26,7 +26,7 @@ MAGENTA = \033[0;95m
 CYAN = \033[0;96m
 WHITE = \033[0;97m
 
-#Sources
+# Sources
 
 SRC_FILES_MAN	=	index main push_instruct quick_sort rev_rotate_instruct\
 					rotate_instruct swap_instruct sort_handling sort_utils\
@@ -43,20 +43,16 @@ OBJ_BON			=	$(addprefix $(OBJ_DIR_BON), $(addsuffix .o, $(SRC_FILES_BON)))
 
 OBJF		=	.cache_exists
 
-all:		$(NAME) $(NAME_BON)
+all:		$(NAME_MAN) $(NAME_BON)
 
-$(NAME):	$(OBJ_MAN)
+$(NAME_MAN):	$(OBJ_MAN)
 			@make -C $(LIBFT)
-			@cp libftplus/libftplus.a .
-			@mv libftplus.a $(NAME)
-			@$(AR) $(NAME) $(OBJ_MAN)
+			@$(CC) $(CFLAGS) $(OBJ_MAN) -L$(LIBFT) -lftplus -o $(NAME_MAN)
 			@echo "$(GREEN)push_swap compiled!$(DEF_COLOR)"
 
 $(NAME_BON):	$(OBJ_BON)
 			@make -C $(LIBFT)
-			@cp libftplus/libftplus.a .
-			@mv libftplus.a $(NAME_BON)
-			@$(AR) $(NAME_BON) $(OBJ_BON)
+			@$(CC) $(CFLAGS) $(OBJ_BON) -L$(LIBFT) -lftplus -o $(NAME_BON)
 			@echo "$(GREEN)checker compiled!$(DEF_COLOR)"
 
 $(OBJ_DIR_MAN)%.o: $(SRC_DIR_MAN)%.c | $(OBJF)
@@ -76,9 +72,9 @@ clean:
 			@echo "$(BLUE)push_swap and checker object files cleaned!$(DEF_COLOR)"
 
 fclean:		clean
-			@$(RM) -f $(NAME) $(NAME_BON)
+			@$(RM) -f $(NAME_MAN) $(NAME_BON)
 			@$(RM) -f $(LIBFT)/libftplus.a
-			@echo "$(CYAN)ft_printf executable files cleaned!$(DEF_COLOR)"
+			@echo "$(CYAN)push_swap executable files cleaned!$(DEF_COLOR)"
 			@echo "$(CYAN)checker executable files cleaned!$(DEF_COLOR)"
 			@echo "$(CYAN)libft executable files cleaned!$(DEF_COLOR)"
 
@@ -86,3 +82,4 @@ re:			fclean all
 			@echo "$(GREEN)Cleaned and rebuilt everything for push_swap and checker$(DEF_COLOR)"
 
 .PHONY:		all clean fclean re
+

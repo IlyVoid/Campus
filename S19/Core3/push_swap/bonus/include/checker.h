@@ -2,7 +2,7 @@
 # define CHECKER_H
 
 # include <limits.h>
-#include <threads.h>
+# include <pthread.h>
 # include "../../libftplus/include/libft.h"
 
 typedef struct s_swap

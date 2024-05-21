@@ -13,7 +13,7 @@
 #include "../../include/libft.h"
 #include <stdlib.h>
 
-static void	ft_len(int n, size_t *len, int *sign)
+static void	ft_length(int n, size_t *len, int *sign)
 {
 	*len = 0;
 	*sign = 1;
@@ -35,7 +35,7 @@ char	*ft_itoa(int n)
 	int		sign;
 	char	*str;
 
-	ft_len(n, &len, &sign);
+	ft_length(n, &len, &sign);
 	str = (char *)malloc(sizeof(char) * (len + 2));
 	if (!str)
 		return (NULL);
