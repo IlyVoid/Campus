@@ -102,6 +102,7 @@ int	main(int ac, char **ag)
 {
 	t_swap	*tab;
 
+	ft_printf("%i", ac);
 	if (ac == 2)
 		ag = ft_split(ag[1], ' ');
 	if (ac == 1)
