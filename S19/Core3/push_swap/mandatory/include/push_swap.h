@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/27 14:42:55 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/05/27 14:45:50 by quvan-de         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -6,18 +18,18 @@
 
 typedef struct s_push
 {
-    int	next;
-    int	max;
-    int	mid;
-    int	flag;
+	int	next;
+	int	max;
+	int	mid;
+	int	flag;
 }	t_push;
 
 typedef struct s_swap
 {
-    t_list	*stack_a;
-    t_list	*stack_b;
-    int		a_size;
-    int		b_size;
+	t_list	*stack_a;
+	t_list	*stack_b;
+	int		a_size;
+	int		b_size;
 }		t_swap;
 
 /* Sorting */

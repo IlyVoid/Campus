@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:14:59 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/05/20 14:27:09 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/05/27 13:17:54 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
 
 typedef struct s_list
 {
-    void      *content;
-	int             flag;
-    int             index;
+	void			*content;
+	int				flag;
+	int				index;
 	struct s_list	*next;
 }					t_list;
 
@@ -63,9 +63,9 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putendl_fd(char *s, int fd);
-int                 ft_strcmp(const char *s1, const char *s2);
-char                *ft_strjoin_free(char *s1, char *s2);
-void                ft_clear_array(char **array);
+int					ft_strcmp(const char *s1, const char *s2);
+char				*ft_strjoin_free(char *s1, char *s2);
+void				ft_clear_array(char **array);
 
 /* BONUS */
 t_list				*ft_lstnew(void *content);

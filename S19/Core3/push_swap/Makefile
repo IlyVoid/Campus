@@ -8,7 +8,7 @@ LIBFT				= libftplus
 SRC_DIR_MAN			= mandatory/src/
 SRC_DIR_BON			= bonus/src/
 OBJ_DIR_MAN			= mandatory/obj/
-OBJ_DIR_BON			= bonus/obj
+OBJ_DIR_BON			= bonus/obj/
 CC					= cc
 CFLAGS				= -Wall -Werror -Wextra -g
 RM					= rm -rf
@@ -41,7 +41,7 @@ OBJ_BON			=	$(addprefix $(OBJ_DIR_BON), $(addsuffix .o, $(SRC_FILES_BON)))
 
 ###
 
-OBJF		=	.cache_exists
+OBJF			=	.cache_exists
 
 all:		$(NAME_MAN) $(NAME_BON)
 
@@ -64,7 +64,7 @@ $(OBJ_DIR_BON)%.o: $(SRC_DIR_BON)%.c | $(OBJF)
 			@$(CC) $(CFLAGS) $(INCLUDE_BON) -c $< -o $@
 
 $(OBJF):
-			@mkdir -p $(OBJ_DIR_MAN) $(OBJ_DIR_BON)
+			@mkdir -p $(OBJ_DIR_BON) $(OBJ_DIR_MAN)
 
 clean:
 			@$(RM) -rf $(OBJ_DIR_MAN) $(OBJ_DIR_BON)

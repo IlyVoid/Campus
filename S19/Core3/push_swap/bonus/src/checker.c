@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/27 13:21:53 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/05/27 14:56:19 by quvan-de         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/checker.h"
 
 int	lexer(char *input, t_swap *tab)
@@ -34,13 +46,12 @@ int	ft_check(t_list *lst, int n, char *nbr)
 	t_list	*tmp;
 	int		i;
 
-
 	tmp = lst;
 	i = 0;
 	while (nbr[i])
 	{
 		if (!(((nbr[i] == '-' || nbr[i] == '+')
-			&& ft_isdigit(nbr[i + 1])) || ft_isdigit(nbr[i])))
+					&& ft_isdigit(nbr[i + 1])) || ft_isdigit(nbr[i])))
 			return (0);
 		i++;
 	}
@@ -52,7 +63,6 @@ int	ft_check(t_list *lst, int n, char *nbr)
 	}
 	return (1);
 }
-
 
 t_list	*ft_init(char **ag, int ac)
 {
