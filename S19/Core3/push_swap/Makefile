@@ -1,16 +1,12 @@
 # Variables
 
 NAME_MAN			= push_swap
-NAME_BON			= checker
 INCLUDE_MAN			= -I mandatory/include
-INCLUDE_BON			= -I bonus/include
 LIBFT				= libftplus
 SRC_DIR_MAN			= mandatory/src/
-SRC_DIR_BON			= bonus/src/
 OBJ_DIR_MAN			= mandatory/obj/
-OBJ_DIR_BON			= bonus/obj/
 CC					= cc
-CFLAGS				= -Wall -Werror -Wextra -g
+CFLAGS				= -Wall -Werror -Wextra -g -fsanitize=address
 RM					= rm -rf
 AR					= ar rcs
 
@@ -31,13 +27,9 @@ WHITE = \033[0;97m
 SRC_FILES_MAN	=	index main push_instruct quick_sort rev_rotate_instruct\
 					rotate_instruct swap_instruct sort_handling sort_utils\
 
-SRC_FILES_BON	=	checker push_instruct_bonus rev_rotate_instruct_bonus\
-					rotate_instruct_bonus swap_instruct_bonus utils_bonus\
 
 SRC_MAN 		= 	$(addprefix $(SRC_DIR_MAN), $(addsuffix .c, $(SRC_FILES_MAN)))
-SRC_BON			=	$(addprefix $(SRC_DIR_BON), $(addsuffix .c, $(SRC_FILES_BON)))
 OBJ_MAN 		= 	$(addprefix $(OBJ_DIR_MAN), $(addsuffix .o, $(SRC_FILES_MAN)))
-OBJ_BON			=	$(addprefix $(OBJ_DIR_BON), $(addsuffix .o, $(SRC_FILES_BON)))
 
 ###
 
@@ -50,29 +42,20 @@ $(NAME_MAN):	$(OBJ_MAN)
 			@$(CC) $(CFLAGS) $(OBJ_MAN) -L$(LIBFT) -lftplus -o $(NAME_MAN)
 			@echo "$(GREEN)push_swap compiled!$(DEF_COLOR)"
 
-$(NAME_BON):	$(OBJ_BON)
-			@make -C $(LIBFT)
-			@$(CC) $(CFLAGS) $(OBJ_BON) -L$(LIBFT) -lftplus -o $(NAME_BON)
-			@echo "$(GREEN)checker compiled!$(DEF_COLOR)"
-
 $(OBJ_DIR_MAN)%.o: $(SRC_DIR_MAN)%.c | $(OBJF)
 			@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
 			@$(CC) $(CFLAGS) $(INCLUDE_MAN) -c $< -o $@
 
-$(OBJ_DIR_BON)%.o: $(SRC_DIR_BON)%.c | $(OBJF)
-			@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
-			@$(CC) $(CFLAGS) $(INCLUDE_BON) -c $< -o $@
-
 $(OBJF):
-			@mkdir -p $(OBJ_DIR_BON) $(OBJ_DIR_MAN)
+			@mkdir -p $(OBJ_DIR_MAN)
 
 clean:
-			@$(RM) -rf $(OBJ_DIR_MAN) $(OBJ_DIR_BON)
+			@$(RM) -rf $(OBJ_DIR_MAN)
 			@make clean -C $(LIBFT)
 			@echo "$(BLUE)push_swap and checker object files cleaned!$(DEF_COLOR)"
 
 fclean:		clean
-			@$(RM) -f $(NAME_MAN) $(NAME_BON)
+			@$(RM) -f $(NAME_MAN)
 			@$(RM) -f $(LIBFT)/libftplus.a
 			@echo "$(CYAN)push_swap executable files cleaned!$(DEF_COLOR)"
 			@echo "$(CYAN)checker executable files cleaned!$(DEF_COLOR)"
