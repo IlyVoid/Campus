@@ -26,6 +26,7 @@ int					ft_isalpha(int i);
 int					ft_isdigit(int i);
 int					ft_isascii(int i);
 int					ft_isprint(int i);
+int                 ft_isspace(char c);
 int					ft_toupper(int i);
 int					ft_tolower(int i);
 void				*ft_memset(void *b, int c, size_t len);
