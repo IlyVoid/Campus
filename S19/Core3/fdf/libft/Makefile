@@ -37,7 +37,7 @@ WHITE = \033[0;97m
 
 FTIS_DIR	=	checkers/
 FTIS		=	ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint \
-				ft_isspace
+				ft_isspace ft_imax
 
 FTMEM_DIR	=	mem/
 FTMEM		=	ft_bzero ft_calloc ft_memchr ft_memcmp ft_memmove ft_memset
