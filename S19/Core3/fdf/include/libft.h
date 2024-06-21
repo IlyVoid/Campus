@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:26:14 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/06/03 16:26:17 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/06/21 01:49:34 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
 
 # define HEX_UPP_BASE "0123456789ABCDEF"
 # define HEX_LOW_BASE "0123456789abcdef"
