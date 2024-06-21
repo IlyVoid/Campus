@@ -1,19 +1,22 @@
+# Naming
 NAME = fdf
-INCLUDES = include
-SRCS_DIR = src
-OBJS_DIR = objs
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g
-RM = rm -rf
-LIBFT = libftplus
-MLX = minilibx-linux
 
-# Sources
-SOURCES = map_reader.c map_size.c \
-          calc.c draw.c mlx.c fdf.c \
-          errors.c helpers.c draw_helper.c
-SRCS = $(addprefix $(SRCS_DIR)/,$(SOURCES))
-OBJS = $(addprefix $(OBJS_DIR)/,$(SOURCES:.c=.o))
+SRC_DIR = src
+OBJS_DIR = objs
+
+SRCS = $(wildcard $(SRC_DIR)/*.c)
+OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))
+
+HEADER = $(wildcard includes/*.h)
+
+INCS = -I includes
+
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+
+MINILIBX = minilibx-linux
+
+FMS = -L $(MINILIBX) -lmlx -L/usr/X11R6/lib -lXext -lX11 -lm
 
 # Colors
 GREEN = \033[0;92m
@@ -22,44 +25,32 @@ RED = \033[0;91m
 WHITE = \033[0;97m
 
 # Targets
-all: lib mlx tmp $(NAME)
-
-lib:
-	@echo "$(GREEN)Creating libftplus files$(WHITE)"
-	@make -C $(LIBFT)
+all: mlx tmp $(NAME)
 
 mlx:
-	@echo "$(GREEN)Cloning and building minilibx-linux$(WHITE)"
-	@if [ ! -d "$(MLX)" ]; then \
-		git clone https://github.com/42Paris/minilibx-linux.git $(MLX); \
-	fi
-	@make -C $(MLX)
-
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^ -L$(LIBFT) -L$(MLX) -lftplus -lm -lmlx -lXext -lX11
-	@echo "$(GREEN)Project successfully compiled$(WHITE)"
+	@echo "$(GREEN)Building minilibx-linux$(WHITE)"
+	@make -C $(MINILIBX)
 
 tmp:
-	@mkdir -p objs
+	@mkdir -p $(OBJS_DIR)
 
-$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c $(INCLUDES)/$(NAME).h
-	@$(CC) $(CFLAGS) -c -o $@ $<
+$(OBJS_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER)
+	@$(CC) $(CFLAGS) $(INCS) -c -o $@ $<
 	@echo "$(BLUE)Creating object file -> $(WHITE)$(notdir $@)... $(RED)[Done]$(WHITE)"
+
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^ $(FMS)
+	@echo "$(GREEN)Project successfully compiled$(WHITE)"
 
 clean:
 	@echo "$(RED)Deleting object files$(WHITE)"
-	@$(RM) $(OBJS_DIR)
-	@make clean -C $(LIBFT)
-	@make clean -C $(MLX)
+	@$(RM) -rf $(OBJS_DIR)
+	@make clean -C $(MINILIBX)
 
 fclean: clean
-	@echo "$(RED)Deleting executable and libraries$(WHITE)"
-	@$(RM) $(NAME)
-	@make fclean -C $(LIBFT)
-	@echo "$(RED)All files cleaned with fclean$(WHITE)"
-	@echo "$(RED)Deleting minilibx-linux repository$(WHITE)"
-	@$(RM) $(MLX)
+	@echo "$(RED)Deleting executable$(WHITE)"
+	@$(RM) -rf $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re lib mlx tmp
+.PHONY: all clean fclean re mlx tmp
