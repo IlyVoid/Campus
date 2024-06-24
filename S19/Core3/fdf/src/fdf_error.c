@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fdf_error.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/24 12:49:31 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/06/24 16:11:11 by quvan-de         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/fdf.h"
 
 void	ft_error(char *str)
@@ -40,8 +52,7 @@ int	file_check(char *file)
 	free(str);
 	if (i == 0)
 		return (1);
-	close(fd);
-	return (0);
+	return (close(fd), 0);
 }
 
 int	input_check(int argc, char *file)

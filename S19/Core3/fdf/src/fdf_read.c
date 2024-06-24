@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fdf_read.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/24 12:49:38 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/06/24 13:05:49 by quvan-de         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/fdf.h"
 
 int	height_and_width(t_fdf *fdf, int fd, char **line, int *width)
@@ -58,10 +70,7 @@ int	actually_fill(t_fdf *fdf, int fd, char **line, int *i)
 	free(*line);
 	j = -1;
 	while (++j < fdf->width)
-	{
-		// printf("elem: '%s'\n", splitted[j]);
 		fdf->matrix[*i][j] = ft_atoi(splitted[j]);
-	}
 	*i += 1;
 	to_free(splitted);
 	return (0);
