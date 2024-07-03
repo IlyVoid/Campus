@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 13:21:53 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/06/26 13:22:20 by quvan-de         ###   ########.fr       */
+/*   Created: 2024/07/03 13:03:19 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/07/03 13:21:54 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/pipex.h"
+#include "../include/pipex.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*find_path(char *cmd, char **env)
 {
-	char	*str;
-	size_t	i;
+	char	**paths;
+	char	*path;
+	int		i;
+	char	*part_path;
 
 	i = 0;
-	str = s;
-	while (i < n)
+	while (ft_strnstr(env[i], "PATH", 4) == 0)
 	{
-		str[i] = c;
+		part_path = ft_strjoin(paths[i], "/");
+		path = ft_strjoin(part_path, cmd);
+		free(part_path);
+		if (access(path, F_OK) == 0)
+			return (path);
+		free(path);
 		i++;
+		if (i == -1)
+			error();
 	}
-	return (s);
 }
