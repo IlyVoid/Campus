@@ -6,12 +6,11 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 12:41:55 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/07/03 13:21:58 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/07/03 13:56:06 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pipex.h"
-#include <unistd.h>
 
 void	child_process(char **argv, char **env, int *fd)
 {
@@ -46,14 +45,14 @@ int	main(int argc, char **argv, char **env)
 
 	if (argc == 5)
 	{
-		if (pipe[fd] == -1)
+		if (pipe(fd) == -1)
 			error();
 		pid1 = fork();
 		if (pid1 == -1)
 			error();
 		if (pid1 == 0)
 			child_process(argv, env, fd);
-		waitpid(pid11, NULL, 0);
+		waitpid(pid1, NULL, 0);
 		parent_process(argv, env, fd);
 	}
 	else
