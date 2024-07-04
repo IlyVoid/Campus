@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 12:18:18 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/07/04 13:43:08 by quvan-de         ###   ########.fr       */
+/*   Created: 2024/04/06 20:48:19 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/04/23 15:25:15 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1000
+# endif
 
 # include <stdlib.h>
-# include <unistd.h>
-# include <string.h>
-# include <stdio.h>
-# include <sys/wait.h>
 # include <fcntl.h>
-# include "./libft.h"
+# include <unistd.h>
 
-/* Mandatory functions */
-void	error(void);
-char	*find_path(char *cmd, char **env);
-int		get_next_line(char **line);
-void	execute(char *argv, char **env);
-
-/* Bonus functions */
-int		open_file(char *argv, int i);
-void	usage(void);
+char	*get_next_line(int fd);
+char	*ft_read_left_str(int fd, char *left_str);
+char	*ft_strchr(char *s, int c);
+size_t	ft_strlen(char *s);
+char	*ft_strjoin(char *left_str, char *buff);
+char	*ft_fetch_line(char *left_str);
+char	*ft_new_left_str(char *left_str);
 
 #endif

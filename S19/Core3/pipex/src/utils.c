@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 13:03:19 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/07/03 13:55:07 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/07/04 15:04:45 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ char	*find_path(char *cmd, char **env)
 
 	i = 0;
 	while (ft_strnstr(env[i], "PATH", 4) == 0)
+		i++;
+	paths = ft_split(env[i] + 5, ':');
+	i = 0;
+	while (paths[i])
 	{
 		part_path = ft_strjoin(paths[i], "/");
 		path = ft_strjoin(part_path, cmd);
@@ -72,7 +76,6 @@ int	get_next_line(char	**line)
 
 	i = 0;
 	r = 0;
-
 	buffer = (char *)malloc(10000);
 	if (!buffer)
 		return (-1);
@@ -88,5 +91,5 @@ int	get_next_line(char	**line)
 	buffer[++i] = '\0';
 	*line = buffer;
 	free(buffer);
-	return(r);
+	return (r);
 }
