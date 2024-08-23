@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ftlib.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/23 13:06:26 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/08/23 13:07:04 by quvan-de         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../lib/philo.h"
 
 size_t  ft_strlen(char *str)
@@ -23,7 +35,7 @@ int skip_space(int *i, const char *str)
 	int sign;
 
 	sign = 1;
-	while ((str[*i] >= 9 && str[i] <= 13) || str[*i] == 32)
+	while ((str[*i] >= 9 && str[*i] <= 13) || str[*i] == 32)
 		(*i)++;
 	if (str[*i] == '-' || str[*i] == '+')
 	{
@@ -68,7 +80,7 @@ void    ft_putnbr_fd(int n, int fd)
 
 	if (n < 0)
 	{
-		write(fd, '_', 1);
+		write(fd, "-", 1);
 		n = -n;
 	}
 	if (n >= 0 && n <= 9)
