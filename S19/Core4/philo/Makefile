@@ -6,13 +6,13 @@
 #    By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/22 14:58:31 by quvan-de          #+#    #+#              #
-#    Updated: 2024/08/23 13:11:52 by quvan-de         ###   ########.fr        #
+#    Updated: 2024/08/23 13:29:49 by quvan-de         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -pthread
+CFLAGS = -g -Wall -Wextra -Werror -pthread
 OBJS_DIR = objs/
 SRCS_DIR = src/
 UTILS_DIR = utils/

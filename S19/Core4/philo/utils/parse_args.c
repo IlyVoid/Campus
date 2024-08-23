@@ -6,13 +6,13 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 13:07:17 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/08/23 13:19:29 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/08/23 17:13:16 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib/philo.h"
 
-void    ft_error_parse_msg(void)
+void	ft_error_parse_msg(void)
 {
 	write(2, RED, ft_strlen(RED));
 	ft_putstr_fd("Error: invalid argument count\n", 2);
@@ -27,7 +27,7 @@ void    ft_error_parse_msg(void)
 	write(2, RESET, ft_strlen(RESET));
 }
 
-bool    parse_arguments(int argc, char **argv, t_philo *philo_info)
+bool	parse_arguments(int argc, char **argv, t_philo *philo_info)
 {
 	if (argc < 5 || argc > 6)
 	{

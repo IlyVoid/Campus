@@ -6,13 +6,13 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 13:07:38 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/08/23 13:09:25 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/08/23 17:15:17 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib/philo.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
 		return (1);

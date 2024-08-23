@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 17:28:32 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/08/23 13:17:07 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/08/23 13:32:46 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void	*check_philo_health(void *philosopher)
 		}
 		if (i + 1 == monitor->num_philosophers)
 			i = -1;
+		usleep(100);
 		i++;
 	}
 	return (NULL);

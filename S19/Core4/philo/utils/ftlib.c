@@ -6,15 +6,15 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 13:06:26 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/08/23 13:13:54 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/08/23 17:14:32 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib/philo.h"
 
-size_t  ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
-	size_t  i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
@@ -22,7 +22,7 @@ size_t  ft_strlen(char *str)
 	return (i);
 }
 
-void    ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	while (*s != '\0')
 	{
@@ -31,9 +31,9 @@ void    ft_putstr_fd(char *s, int fd)
 	}
 }
 
-int skip_space(int *i, const char *str)
+int	skip_space(int *i, const char *str)
 {
-	int sign;
+	int	sign;
 
 	sign = 1;
 	while ((str[*i] >= 9 && str[*i] <= 13) || str[*i] == 32)
@@ -47,13 +47,13 @@ int skip_space(int *i, const char *str)
 	return (sign);
 }
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int         sign;
-	int         i;
-	long long   res;
-	long long   prev;
-	long long   tmp;
+	int			sign;
+	int			i;
+	long long	res;
+	long long	prev;
+	long long	tmp;
 
 	i = 0;
 	res = 0;
@@ -75,9 +75,9 @@ int ft_atoi(const char *str)
 	return (sign * res);
 }
 
-void    ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char    c;
+	char	c;
 
 	if (n < 0)
 	{

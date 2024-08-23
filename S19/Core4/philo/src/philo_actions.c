@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 17:29:29 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/08/22 17:29:54 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/08/23 17:17:42 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	get_fork(t_philo *philosopher)
 		pthread_mutex_lock(&philosopher->fork_mutex[philosopher
 			->num_philosophers - 1]);
 	else
-	 pthread_mutex_lock(&philosopher->fork_mutex[philosopher->id - 2]);
+		pthread_mutex_lock(&philosopher->fork_mutex[philosopher->id - 2]);
 	pthread_mutex_lock(philosopher->protection_mutex);
 	print_status(philosopher, "has taken a fork");
 	pthread_mutex_unlock(philosopher->protection_mutex);
@@ -42,5 +42,5 @@ void	release_forks(t_philo *philosopher)
 		pthread_mutex_unlock(&philosopher->fork_mutex[philosopher
 			->num_philosophers - 1]);
 	else
-	 pthread_mutex_unlock(&philosopher->fork_mutex[philosopher->id - 2]);
+		pthread_mutex_unlock(&philosopher->fork_mutex[philosopher->id - 2]);
 }
