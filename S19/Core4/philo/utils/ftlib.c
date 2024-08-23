@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 13:06:26 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/08/23 13:07:04 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/08/23 13:13:54 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ size_t  ft_strlen(char *str)
 {
 	size_t  i;
 
+	i = 0;
 	while (str[i])
 		i++;
 	return (i);

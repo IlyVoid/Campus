@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 13:07:17 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/08/23 13:07:25 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/08/23 13:19:29 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void    ft_error_parse_msg(void)
 {
 	write(2, RED, ft_strlen(RED));
-	ft_putstr_fd("Error: invalid argument count", 2);
+	ft_putstr_fd("Error: invalid argument count\n", 2);
 	write(2, RESET, ft_strlen(RESET));
 	write(2, GREEN, ft_strlen(GREEN));
 	ft_putstr_fd("Usage: ./philo [philo count] [time till death] ", 2);

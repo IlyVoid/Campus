@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 17:28:32 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/08/22 17:28:45 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/08/23 13:17:07 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	*check_philo_health(void *philosopher)
 		if (time >= monitor->time_to_die)
 		{
 			pthread_mutex_lock(monitor->protection_mutex);
-			rest_in_peace(i + 1, ft_get_time() - monitor->start_time);
+			death_bed(i + 1, ft_get_time() - monitor->start_time);
 			return (NULL);
 		}
 		if (i + 1 == monitor->num_philosophers)

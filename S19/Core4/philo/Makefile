@@ -6,7 +6,7 @@
 #    By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/22 14:58:31 by quvan-de          #+#    #+#              #
-#    Updated: 2024/08/22 17:20:41 by quvan-de         ###   ########.fr        #
+#    Updated: 2024/08/23 13:11:52 by quvan-de         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ $(NAME): $(OBJS)
 
 clean:
 	@echo "$(RED)Deleting object files$(WHITE)"
-	@rm -rf $(OBJS)
+	@rm -rf $(OBJS_DIR)
 
 fclean: clean
 	@echo "$(RED)Deleting executables$(WHITE)"

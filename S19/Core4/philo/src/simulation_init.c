@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 17:30:55 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/08/22 17:32:01 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/08/23 13:17:39 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ t_philo	*init_philosophers(t_philo *philo_info)
 	return (philos_initialised);
 }
 
-pthread_mutex_t	*initialize_forks(int num_philosophers)
+pthread_mutex_t	*init_forks(int num_philosophers)
 {
 	int				i;
 	pthread_mutex_t	*forks;
@@ -66,7 +66,7 @@ pthread_mutex_t	*initialize_forks(int num_philosophers)
 	return (forks);
 }
 
-long long	*initialize_last_meal_time(int num_philosophers)
+long long	*init_last_meal_time(int num_philosophers)
 {
 	int			i;
 	long long	*last_meal_time;
@@ -83,7 +83,7 @@ long long	*initialize_last_meal_time(int num_philosophers)
 	return (last_meal_time);
 }
 
-void	initialize_philos_data(t_philo *philosophers_initialized,
+void	init_philos_data(t_philo *philosophers_initialized,
 		t_philo *philo, pthread_mutex_t *num_forks,
 		long long *last_meal_time)
 {

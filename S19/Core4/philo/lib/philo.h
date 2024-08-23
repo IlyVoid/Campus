@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 11:32:38 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/08/22 16:49:08 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/08/23 13:16:45 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ bool			validate_num_must_eat(const char *arg);
 // print_prompt
 void			ft_putnbr_fd(int n, int fd);
 void			print_status(t_philo *philo, char *action);
-void			rest_in_peace(int id, long long time);
+void			death_bed(int id, long long time);
 void			ft_error_parse_msg(void);
 
 // utils
