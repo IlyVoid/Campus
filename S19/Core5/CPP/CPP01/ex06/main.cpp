@@ -5,20 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/06 00:22:05 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/10/06 17:36:31 by quvan-de         ###   ########.fr       */
+/*   Created: 2024/10/06 19:54:09 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/10/06 19:54:58 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Classes/zombie.hpp"
+#include "Classes/Harl.hpp"
 
-int main(void)
+int main(int argc, char **argv)
 {
-    std::cout << "Members of the horde spawn uninitialised" << std::endl;
-    Zombie *horde = zombieHorde(10, "ZombieHorde");
-    std::cout << "\nThe horde let's their prescence be known" << std::endl;
-    for (int i = 0; i < 10; i++)
-        horde[i].announce();
-    std::cout << "\nKill the horde to fix mem leaks" << std::endl;
-    delete[] horde;
+    if (argc != 2) {
+        std::cerr << "Usage: ./harlFilter <level>" << std::endl;
+        return 1;
+    }
+
+    Harl harl;
+    std::string level = argv[1];
+
+    // Call Harl's complain method with the provided level
+    harl.complain(level);
+
+    return 0;
 }
