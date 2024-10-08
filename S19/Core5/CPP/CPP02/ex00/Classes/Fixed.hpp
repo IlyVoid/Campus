@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 19:23:04 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/10/08 22:38:22 by quvan-de         ###   ########.fr       */
+/*   Created: 2024/10/07 12:44:48 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/10/07 12:51:31 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-#include "Contact.hpp"
-#include <limits>
-#include <algorithm>
+# include <iostream>
 
-class PhoneBook {
+class Fixed{
 private:
-    Contact contacts[8];
-    int nextIndex;
-    int totalContacts;
-
+	int _fixedPointValue;
+	static const int _fractionalBits = 0;
 public:
-    PhoneBook();
+	Fixed();
+	Fixed(const Fixed& other);
+    ~Fixed();
+    Fixed& operator=(const Fixed& other);
 
-	int getTotalContacts() const;
-
-    void addContact(const Contact& newContact);
-    void displayContacts() const;
-    void displayContactDetails(int index) const;
+    int getRawBits(void) const;
+    void setRawBits(int const raw);
 };
 
 #endif

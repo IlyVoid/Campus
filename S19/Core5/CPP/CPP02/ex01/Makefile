@@ -5,19 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/01 19:25:59 by quvan-de          #+#    #+#              #
-#    Updated: 2024/10/08 15:43:46 by quvan-de         ###   ########.fr        #
+#    Created: 2024/10/07 15:46:03 by quvan-de          #+#    #+#              #
+#    Updated: 2024/10/07 15:47:03 by quvan-de         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = fixed_point
 
-SRCS = main.cpp classDef/PhoneBook.cpp classDef/Contact.cpp
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
+SRCS = main.cpp Imp/Fixed.cpp
 OBJS = $(SRCS:.cpp=.o)
-
-CXX = g++
-CXXFLAGS = -Wall -Wextra -Werror -g -std=c++98
 
 all: $(NAME)
 

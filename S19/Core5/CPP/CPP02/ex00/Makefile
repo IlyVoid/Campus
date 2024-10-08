@@ -5,29 +5,32 @@
 #                                                     +:+ +:+         +:+      #
 #    By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/01 19:25:59 by quvan-de          #+#    #+#              #
-#    Updated: 2024/10/08 15:43:46 by quvan-de         ###   ########.fr        #
+#    Created: 2024/10/07 12:53:23 by quvan-de          #+#    #+#              #
+#    Updated: 2024/10/07 12:53:34 by quvan-de         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = fixed
 
-SRCS = main.cpp classDef/PhoneBook.cpp classDef/Contact.cpp
+SRC = main.cpp Implementation/Fixed.cpp
 
-OBJS = $(SRCS:.cpp=.o)
+OBJ = $(SRC:.cpp=.o)
 
-CXX = g++
-CXXFLAGS = -Wall -Wextra -Werror -g -std=c++98
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+$(NAME): $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
+

@@ -6,7 +6,7 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 19:24:32 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/10/01 19:24:57 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/10/08 22:46:37 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,13 @@ void PhoneBook::displayContacts() const {
     }
 }
 
+int PhoneBook::getTotalContacts() const {
+    return totalContacts;
+}
+
 void PhoneBook::displayContactDetails(int index) const {
-    if (index < 1 || index > totalContacts) {
+    while (index < 1 || index >= totalContacts) {
         std::cout << "Invalid index!" << std::endl;
-        return;
     }
 
     const Contact& contact = contacts[index - 1];
