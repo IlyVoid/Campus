@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 16:11:31 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/10/11 12:03:15 by quvan-de         ###   ########.fr       */
+/*   Created: 2024/10/29 03:56:02 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/10/29 03:56:02 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Classes/Fixed.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
 
-int main() {
-    Fixed a;
-    Fixed const b(Fixed(5.05f) * Fixed(2));
+class   Dog : public Animal
+{
+    public:
+        // Constructor
+        Dog(void);
 
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
+        // Copy Constructor
+        Dog(const Dog& other);
 
-    std::cout << b << std::endl;
+        // Copy Assignment
+        Dog& operator = (const Dog& other);
 
-    std::cout << Fixed::max(a, b) << std::endl;
+        // Woefer
+        void makeSound(void) const;
 
-    return 0;
-}
+        // Destructor
+        ~Dog(void);
+};
+
+#endif

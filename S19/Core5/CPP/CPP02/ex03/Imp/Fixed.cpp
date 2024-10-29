@@ -6,9 +6,11 @@
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 16:11:24 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/10/11 12:07:55 by quvan-de         ###   ########.fr       */
+/*   Updated: 2024/10/14 14:58:24 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../Classes/Fixed.hpp"
 
 #include "../Classes/Fixed.hpp"
 

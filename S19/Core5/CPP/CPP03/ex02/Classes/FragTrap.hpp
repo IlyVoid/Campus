@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 16:11:31 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/10/11 12:03:15 by quvan-de         ###   ########.fr       */
+/*   Created: 2024/10/16 15:22:40 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/10/16 15:22:45 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Classes/Fixed.hpp"
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-int main() {
-    Fixed a;
-    Fixed const b(Fixed(5.05f) * Fixed(2));
+#include "ClapTrap.hpp"
 
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
+class FragTrap : public ClapTrap
+{
+public:
+    FragTrap(const std::string& name);
+    ~FragTrap();
 
-    std::cout << b << std::endl;
+    void attack(const std::string& target);
+    void highFivesGuys(void);
+};
 
-    std::cout << Fixed::max(a, b) << std::endl;
-
-    return 0;
-}
+#endif

@@ -5,26 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 16:11:31 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/10/11 12:03:15 by quvan-de         ###   ########.fr       */
+/*   Created: 2024/10/16 14:33:57 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/10/16 15:18:55 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Classes/Fixed.hpp"
+#include "Classes/ScavTrap.hpp"
 
 int main() {
-    Fixed a;
-    Fixed const b(Fixed(5.05f) * Fixed(2));
+    ClapTrap clap("Clappy");
 
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
+    clap.attack("Target1");
+    clap.takeDamage(5);
+    clap.beRepaired(3);
+    clap.takeDamage(10);
+    clap.beRepaired(5);
+    clap.attack("Target2");
 
-    std::cout << b << std::endl;
+    std::cout << "\n--- Now introducing ScavTrap! ---\n" << std::endl;
 
-    std::cout << Fixed::max(a, b) << std::endl;
+    ScavTrap scav("Scavvy");
+    scav.attack("Enemy1");
+    scav.takeDamage(30);
+    scav.beRepaired(10);
+    scav.guardGate();
+    scav.takeDamage(100);
+    scav.beRepaired(20);
 
     return 0;
 }

@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 16:11:31 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/10/11 12:03:15 by quvan-de         ###   ########.fr       */
+/*   Created: 2024/10/16 15:27:47 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/10/16 15:29:38 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Classes/Fixed.hpp"
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
-int main() {
-    Fixed a;
-    Fixed const b(Fixed(5.05f) * Fixed(2));
+#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
+class DiamondTrap : public FragTrap, public ScavTrap
+{
+private:
+    std::string name; // DiamondTrap's name, NOT ClapTrap's name
 
-    std::cout << b << std::endl;
+public:
+    DiamondTrap(const std::string& name);
+    ~DiamondTrap();
 
-    std::cout << Fixed::max(a, b) << std::endl;
+    void attack(const std::string& target);
+    void whoAmI();
+};
 
-    return 0;
-}
+#endif

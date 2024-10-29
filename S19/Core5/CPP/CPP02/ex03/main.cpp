@@ -5,26 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 16:11:31 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/10/11 12:03:15 by quvan-de         ###   ########.fr       */
+/*   Created: 2024/10/14 14:50:40 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/10/14 15:05:01 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Classes/Fixed.hpp"
+#include "./Classes/Point.hpp"
+#include <iostream>
 
 int main() {
-    Fixed a;
-    Fixed const b(Fixed(5.05f) * Fixed(2));
+    Point a(0.0f, 0.0f);
+    Point b(10.0f, 0.0f);
+    Point c(0.0f, 10.0f);
+    Point point(5.0f, 5.0f);
 
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-
-    std::cout << b << std::endl;
-
-    std::cout << Fixed::max(a, b) << std::endl;
+    if (bsp(a, b, c, point)) {
+        std::cout << "Point is inside the triangle" << std::endl;
+    } else {
+        std::cout << "Point is outside the triangle" << std::endl;
+    }
 
     return 0;
 }

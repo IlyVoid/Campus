@@ -5,26 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 16:11:31 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/10/11 12:03:15 by quvan-de         ###   ########.fr       */
+/*   Created: 2024/10/16 14:33:57 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/10/16 14:34:20 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Classes/Fixed.hpp"
+#include "Classes/ClapTrap.hpp"
 
 int main() {
-    Fixed a;
-    Fixed const b(Fixed(5.05f) * Fixed(2));
+    ClapTrap clap("Clappy");
 
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-
-    std::cout << b << std::endl;
-
-    std::cout << Fixed::max(a, b) << std::endl;
+    clap.attack("Target1");
+    clap.takeDamage(5);
+    clap.beRepaired(3);
+    clap.takeDamage(10);
+    clap.beRepaired(5);
+    clap.attack("Target2");
 
     return 0;
 }

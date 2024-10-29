@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 16:11:31 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/10/11 12:03:15 by quvan-de         ###   ########.fr       */
+/*   Created: 2024/10/16 12:10:45 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/10/16 12:19:30 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Classes/Fixed.hpp"
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
-int main() {
-    Fixed a;
-    Fixed const b(Fixed(5.05f) * Fixed(2));
+#include <iostream>
+#include <string>
 
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
+class ClapTrap {
+private:
+	std::string name;
+	unsigned int hitPoints;
+	unsigned int energyPoints;
+	unsigned int attackDamage;
 
-    std::cout << b << std::endl;
+public:
+	ClapTrap(const std::string& name);
+	~ClapTrap();
 
-    std::cout << Fixed::max(a, b) << std::endl;
+	void attack(const std::string& target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
+};
 
-    return 0;
-}
+#endif

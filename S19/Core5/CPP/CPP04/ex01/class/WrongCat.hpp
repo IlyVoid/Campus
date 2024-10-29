@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: quvan-de <quvan-de@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 16:11:31 by quvan-de          #+#    #+#             */
-/*   Updated: 2024/10/11 12:03:15 by quvan-de         ###   ########.fr       */
+/*   Created: 2024/10/29 03:56:04 by quvan-de          #+#    #+#             */
+/*   Updated: 2024/10/29 03:56:04 by quvan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Classes/Fixed.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-int main() {
-    Fixed a;
-    Fixed const b(Fixed(5.05f) * Fixed(2));
+class   WrongCat : public WrongAnimal
+{
+    public:
+        // Constructor
+        WrongCat(void);
 
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
+        // Copy Constructor
+        WrongCat(const WrongCat& other);
 
-    std::cout << b << std::endl;
+        // Copy Assignment
+        WrongCat& operator = (const WrongCat& other);
 
-    std::cout << Fixed::max(a, b) << std::endl;
+        // Meower
+        void makeSound(void) const;
 
-    return 0;
-}
+        // Destructor
+        ~WrongCat(void);
+};
+
+#endif
